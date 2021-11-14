@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("LabyDB")]
+[assembly: AssemblyTitle("Coursework+Practic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LabyDB")]
+[assembly: AssemblyProduct("Coursework+Practic")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("5da8194c-d9da-45ef-a707-30e8c4ce0459")]
+[assembly: Guid("927f2ab9-6f3d-4ae4-a9c8-5c54174bf0ee")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

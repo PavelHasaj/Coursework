@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Coursework_Practic {
     public partial class Form1 : Form {
@@ -7,21 +8,51 @@ namespace Coursework_Practic {
             InitializeComponent();
         }
 
-        private void Form2_open_button(object sender, EventArgs e) {
-            Program.form2.Show();
-            this.Hide();
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\Coursework+Practic\Coursework+Practic\Database1.mdf;Integrated Security=True");
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        Database1DataSet dataSet = new Database1DataSet();
+
+        private void DatabaseUpdate() {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand command_select = new SqlCommand("Select * From Pairs", connection);
+            dataAdapter.SelectCommand = command_select;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Program.form3.Show();
-            this.Hide();
+        void DataAdd() {
+            //добавление записи
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+
+            SqlCommand comand = new SqlCommand("Insert Into Pairs Values (@Pair_id, @Pair_number, @Teacher_name, @Group_name)", connection);
+            comand.Parameters.AddWithValue("@Pair_id", Convert.ToInt32(textBox1.Text));
+            comand.Parameters.AddWithValue("@Pair_number", textBox2.Text);
+            comand.Parameters.AddWithValue("@Teacher_name", textBox3.Text);
+            comand.Parameters.AddWithValue("@Group_name", textBox4.Text);
+
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            DatabaseUpdate();//вызов метода обновления dataGridView
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Program.form4.Show();
-            this.Hide();
+        private void Form1_Load(object sender, EventArgs e) {
+            DatabaseUpdate();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            DatabaseUpdate();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            DataAdd();
         }
     }
 }

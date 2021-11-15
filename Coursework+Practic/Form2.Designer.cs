@@ -26,7 +26,7 @@ namespace Coursework_Practic {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sampleDatabaseDataSet = new Coursework_Practic.SampleDatabaseDataSet();
+            this.database1DataSet = new Coursework_Practic.Database1DataSet();
             this.sampleDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,13 +42,11 @@ namespace Coursework_Practic {
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.sampleDatabaseDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDatabaseDataSet1 = new Coursework_Practic.SampleDatabaseDataSet1();
             this.sampleDatabaseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,12 +62,12 @@ namespace Coursework_Practic {
             // 
             // sampleDatabaseDataSet
             // 
-            this.sampleDatabaseDataSet.DataSetName = "SampleDatabaseDataSet";
-            this.sampleDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.database1DataSet.DataSetName = "SampleDatabaseDataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sampleDatabaseDataSetBindingSource
             // 
-            this.sampleDatabaseDataSetBindingSource.DataSource = this.sampleDatabaseDataSet;
+            this.sampleDatabaseDataSetBindingSource.DataSource = this.database1DataSet;
             this.sampleDatabaseDataSetBindingSource.Position = 0;
             // 
             // textBox1
@@ -200,21 +198,6 @@ namespace Coursework_Practic {
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // sampleDatabaseDataSetBindingSource1
-            // 
-            this.sampleDatabaseDataSetBindingSource1.DataSource = this.sampleDatabaseDataSet;
-            this.sampleDatabaseDataSetBindingSource1.Position = 0;
-            // 
-            // sampleDatabaseDataSet1
-            // 
-            this.sampleDatabaseDataSet1.DataSetName = "SampleDatabaseDataSet1";
-            this.sampleDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sampleDatabaseDataSet1BindingSource
-            // 
-            this.sampleDatabaseDataSet1BindingSource.DataSource = this.sampleDatabaseDataSet1;
-            this.sampleDatabaseDataSet1BindingSource.Position = 0;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,10 +225,9 @@ namespace Coursework_Practic {
             this.Text = "2 лаба";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,7 +238,7 @@ namespace Coursework_Practic {
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource;
-        private SampleDatabaseDataSet sampleDatabaseDataSet;
+        private Database1DataSet database1DataSet;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -271,7 +253,6 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource1;
-        private SampleDatabaseDataSet1 sampleDatabaseDataSet1;
         private System.Windows.Forms.BindingSource sampleDatabaseDataSet1BindingSource;
     }
 }

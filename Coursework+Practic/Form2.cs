@@ -7,9 +7,9 @@ namespace Coursework_Practic {
         public Form2() {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection(Program.GetConnectionString());
+        SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        SampleDatabaseDataSet dataSet = new SampleDatabaseDataSet();
+        Database1DataSet dataSet = new Database1DataSet();
 
         private void DatabaseUpdate() {
             dataGridView1.DataSource = null;

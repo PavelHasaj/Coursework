@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -21,7 +14,7 @@ namespace Coursework_Practic
         //Переход назад
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.form2.Show();
+            //Program.form2.Show();
             this.Hide();
         }
 
@@ -39,9 +32,9 @@ namespace Coursework_Practic
             this.Hide();
         }
 
-        SqlConnection connection = new SqlConnection(Program.GetConnectionString());
+        SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        SampleDatabaseDataSet dataSet = new SampleDatabaseDataSet();
+        Database1DataSet dataSet = new Database1DataSet();
 
         private void DatabaseUpdate()
         {

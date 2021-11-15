@@ -39,10 +39,9 @@ namespace Coursework_Practic
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.sampleDatabaseDataSet = new Coursework_Practic.SampleDatabaseDataSet1();
+            this.database1DataSet = new Coursework_Practic.Database1DataSet();
             this.sampleDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.sampleDatabaseDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,9 +62,8 @@ namespace Coursework_Practic
             this.label9 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -156,14 +154,14 @@ namespace Coursework_Practic
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // sampleDatabaseDataSet
+            // database1DataSet
             // 
-            this.sampleDatabaseDataSet.DataSetName = "SampleDatabaseDataSet";
-            this.sampleDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sampleDatabaseDataSetBindingSource
             // 
-            this.sampleDatabaseDataSetBindingSource.DataSource = this.sampleDatabaseDataSet;
+            this.sampleDatabaseDataSetBindingSource.DataSource = this.database1DataSet;
             this.sampleDatabaseDataSetBindingSource.Position = 0;
             // 
             // textBox3
@@ -173,11 +171,6 @@ namespace Coursework_Practic
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(218, 20);
             this.textBox3.TabIndex = 12;
-            // 
-            // sampleDatabaseDataSetBindingSource1
-            // 
-            this.sampleDatabaseDataSetBindingSource1.DataSource = this.sampleDatabaseDataSet;
-            this.sampleDatabaseDataSetBindingSource1.Position = 0;
             // 
             // textBox4
             // 
@@ -403,9 +396,8 @@ namespace Coursework_Practic
             this.Text = "3 лаба";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,9 +415,8 @@ namespace Coursework_Practic
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource;
-        private SampleDatabaseDataSet1 sampleDatabaseDataSet;
+        private Database1DataSet database1DataSet;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -8,7 +8,7 @@ namespace Coursework_Practic {
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\Coursework+Practic\Coursework+Practic\Database1.mdf;Integrated Security=True");
+        SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
         Database1DataSet dataSet = new Database1DataSet();
 
@@ -16,7 +16,7 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand command_select = new SqlCommand("Select * From Pairs", connection);
+            SqlCommand command_select = new SqlCommand("Select * From Teachers", connection);
             dataAdapter.SelectCommand = command_select;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];

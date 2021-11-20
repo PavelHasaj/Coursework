@@ -8,16 +8,17 @@ namespace Coursework_Practic {
         /// </summary>
         /// 
 
-        public static Form1 form1 = new Form1();
-        public static Form2 form2 = new Form2();
-        public static Form3 form3 = new Form3();
-        public static Form4 form4 = new Form4();
+        public static MainForm mainForm = new MainForm();
+        public static TeachersForm teachersForm = new TeachersForm();
+        public static DisciplinesForm disciplinesForm = new DisciplinesForm();
+        public static GroupsForm groupsForm = new GroupsForm();
+        //public static SyllabusForm syllabusForm = new SyllabusForm();
 
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(form1);
+            Application.Run(mainForm);
         }
     }
 }

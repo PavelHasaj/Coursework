@@ -3,8 +3,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace Coursework_Practic {
-    public partial class Form2 : Form {
-        public Form2() {
+    public partial class TeachersForm : Form {
+        public TeachersForm() {
             InitializeComponent();
         }
         SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
@@ -31,7 +31,6 @@ namespace Coursework_Practic {
             SqlCommand comand = new SqlCommand("Insert Into Abonents Values (@Nomer_licevogo_cheta, @FIO, @Adres)", connection);
             comand.Parameters.AddWithValue("@Nomer_licevogo_cheta", textBox1.Text);
             comand.Parameters.AddWithValue("@FIO", textBox2.Text);
-            comand.Parameters.AddWithValue("@Adres", textBox3.Text);
 
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
@@ -48,7 +47,6 @@ namespace Coursework_Practic {
             connection.Open();
 
             command.Parameters.AddWithValue("@FullName", textBox2.Text);
-            command.Parameters.AddWithValue("@Adress", textBox3.Text);
 
             dataAdapter.SelectCommand = command;
             dataAdapter.Fill(dataSet);
@@ -91,13 +89,13 @@ namespace Coursework_Practic {
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.form3.Show();
+            Program.disciplinesForm.Show();
             this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
 
@@ -108,7 +106,7 @@ namespace Coursework_Practic {
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
     }

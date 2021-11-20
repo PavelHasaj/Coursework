@@ -1,7 +1,7 @@
 ﻿
 namespace Coursework_Practic
 {
-    partial class Form3
+    partial class DisciplinesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -68,9 +68,7 @@ namespace Coursework_Practic
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(364, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(424, 397);
@@ -78,7 +76,7 @@ namespace Coursework_Practic
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Window;
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
             this.button4.Location = new System.Drawing.Point(551, 415);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
@@ -89,7 +87,7 @@ namespace Coursework_Practic
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Window;
+            this.button5.BackColor = System.Drawing.SystemColors.Control;
             this.button5.Location = new System.Drawing.Point(632, 415);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
@@ -100,7 +98,7 @@ namespace Coursework_Practic
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.Window;
+            this.button6.BackColor = System.Drawing.SystemColors.Control;
             this.button6.Location = new System.Drawing.Point(713, 415);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
@@ -111,7 +109,7 @@ namespace Coursework_Practic
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(140, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 20);
@@ -137,7 +135,7 @@ namespace Coursework_Practic
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(140, 38);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 20);
@@ -145,7 +143,7 @@ namespace Coursework_Practic
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(202, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -166,7 +164,7 @@ namespace Coursework_Practic
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.Location = new System.Drawing.Point(140, 64);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(218, 20);
@@ -208,7 +206,7 @@ namespace Coursework_Practic
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
             this.textBox5.Location = new System.Drawing.Point(140, 173);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(218, 20);
@@ -216,7 +214,7 @@ namespace Coursework_Practic
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Location = new System.Drawing.Point(283, 199);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -227,7 +225,7 @@ namespace Coursework_Practic
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
             this.button3.Location = new System.Drawing.Point(121, 116);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
@@ -238,7 +236,7 @@ namespace Coursework_Practic
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Window;
+            this.button7.BackColor = System.Drawing.SystemColors.Control;
             this.button7.Location = new System.Drawing.Point(40, 116);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
@@ -249,7 +247,7 @@ namespace Coursework_Practic
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.Window;
+            this.button8.BackColor = System.Drawing.SystemColors.Control;
             this.button8.Location = new System.Drawing.Point(283, 116);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
@@ -260,7 +258,7 @@ namespace Coursework_Practic
             // 
             // textBox6
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
             this.textBox6.Location = new System.Drawing.Point(140, 228);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(218, 20);
@@ -277,7 +275,7 @@ namespace Coursework_Practic
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Window;
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
             this.button9.Location = new System.Drawing.Point(283, 254);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
@@ -288,7 +286,7 @@ namespace Coursework_Practic
             // 
             // textBox7
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
             this.textBox7.Location = new System.Drawing.Point(140, 283);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(218, 20);
@@ -305,7 +303,7 @@ namespace Coursework_Practic
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.Window;
+            this.button10.BackColor = System.Drawing.SystemColors.Control;
             this.button10.Location = new System.Drawing.Point(283, 309);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
@@ -325,7 +323,7 @@ namespace Coursework_Practic
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.Window;
+            this.button11.BackColor = System.Drawing.SystemColors.Control;
             this.button11.Location = new System.Drawing.Point(283, 341);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
@@ -345,7 +343,7 @@ namespace Coursework_Practic
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.SystemColors.Window;
+            this.button12.BackColor = System.Drawing.SystemColors.Control;
             this.button12.Location = new System.Drawing.Point(283, 370);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
@@ -354,11 +352,11 @@ namespace Coursework_Practic
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // Form3
+            // DisciplinesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label9);
@@ -391,7 +389,7 @@ namespace Coursework_Practic
             this.Controls.Add(this.dataGridView1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form3";
+            this.Name = "DisciplinesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "3 лаба";
             this.Load += new System.EventHandler(this.Form3_Load);

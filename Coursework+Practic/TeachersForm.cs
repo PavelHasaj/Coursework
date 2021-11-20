@@ -3,8 +3,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace Coursework_Practic {
-    public partial class Form2 : Form {
-        public Form2() {
+    public partial class TeachersForm : Form {
+        public TeachersForm() {
             InitializeComponent();
         }
         SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
@@ -91,13 +91,13 @@ namespace Coursework_Practic {
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.form3.Show();
+            Program.disciplinesForm.Show();
             this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
 
@@ -108,7 +108,7 @@ namespace Coursework_Practic {
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
     }

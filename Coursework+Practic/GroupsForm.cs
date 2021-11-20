@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace Coursework_Practic
 {
-    public partial class Form4 : Form
+    public partial class GroupsForm : Form
     {
-        public Form4()
+        public GroupsForm()
         {
             InitializeComponent();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.form3.Show();
+            Program.disciplinesForm.Show();
             this.Hide();
         }
 

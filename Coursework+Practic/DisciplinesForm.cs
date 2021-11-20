@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace Coursework_Practic
 {
-    public partial class Form3 : Form
+    public partial class DisciplinesForm : Form
     {
-        public Form3()
+        public DisciplinesForm()
         {
             InitializeComponent();
         }
@@ -21,14 +21,14 @@ namespace Coursework_Practic
         //Переход на главную
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.form1.Show();
+            Program.mainForm.Show();
             this.Hide();
         }
 
         //Переход вперед
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.form4.Show();
+            Program.groupsForm.Show();
             this.Hide();
         }
 

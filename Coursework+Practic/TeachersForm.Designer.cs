@@ -24,28 +24,21 @@ namespace Coursework_Practic {
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.database1DataSet = new Coursework_Practic.Database1DataSet();
-            this.sampleDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TeacherIDTextBox = new System.Windows.Forms.TextBox();
+            this.TeacherFullNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.sampleDatabaseDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDatabaseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataAddButton = new System.Windows.Forms.Button();
+            this.DataChangeButton = new System.Windows.Forms.Button();
+            this.DataDeleteButton = new System.Windows.Forms.Button();
+            this.NextFormButton = new System.Windows.Forms.Button();
+            this.MainFormButton = new System.Windows.Forms.Button();
+            this.PreviousFormButton = new System.Windows.Forms.Button();
+            this.DatabaseUpdateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -61,26 +54,21 @@ namespace Coursework_Practic {
             this.database1DataSet.DataSetName = "SampleDatabaseDataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sampleDatabaseDataSetBindingSource
+            // TeacherIDTextBox
             // 
-            this.sampleDatabaseDataSetBindingSource.DataSource = this.database1DataSet;
-            this.sampleDatabaseDataSetBindingSource.Position = 0;
+            this.TeacherIDTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.TeacherIDTextBox.Location = new System.Drawing.Point(116, 12);
+            this.TeacherIDTextBox.Name = "TeacherIDTextBox";
+            this.TeacherIDTextBox.Size = new System.Drawing.Size(218, 20);
+            this.TeacherIDTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // TeacherFullNameTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(116, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(116, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 20);
-            this.textBox2.TabIndex = 1;
+            this.TeacherFullNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.TeacherFullNameTextBox.Location = new System.Drawing.Point(116, 34);
+            this.TeacherFullNameTextBox.Name = "TeacherFullNameTextBox";
+            this.TeacherFullNameTextBox.Size = new System.Drawing.Size(218, 20);
+            this.TeacherFullNameTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -100,82 +88,82 @@ namespace Coursework_Practic {
             this.label2.TabIndex = 2;
             this.label2.Text = "ФИО";
             // 
-            // button1
+            // DataAddButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(174, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.add_button);
+            this.DataAddButton.BackColor = System.Drawing.SystemColors.Control;
+            this.DataAddButton.Location = new System.Drawing.Point(174, 64);
+            this.DataAddButton.Name = "DataAddButton";
+            this.DataAddButton.Size = new System.Drawing.Size(75, 23);
+            this.DataAddButton.TabIndex = 5;
+            this.DataAddButton.Text = "Добавить";
+            this.DataAddButton.UseVisualStyleBackColor = true;
+            this.DataAddButton.Click += new System.EventHandler(this.DataAddButton_Click);
             // 
-            // button2
+            // DataChangeButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(93, 64);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Изменить";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.data_change_button);
+            this.DataChangeButton.BackColor = System.Drawing.SystemColors.Control;
+            this.DataChangeButton.Location = new System.Drawing.Point(93, 64);
+            this.DataChangeButton.Name = "DataChangeButton";
+            this.DataChangeButton.Size = new System.Drawing.Size(75, 23);
+            this.DataChangeButton.TabIndex = 4;
+            this.DataChangeButton.Text = "Изменить";
+            this.DataChangeButton.UseVisualStyleBackColor = true;
+            this.DataChangeButton.Click += new System.EventHandler(this.DataChangeButton_Click);
             // 
-            // button3
+            // DataDeleteButton
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(12, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.data_delete_button);
+            this.DataDeleteButton.BackColor = System.Drawing.SystemColors.Control;
+            this.DataDeleteButton.Location = new System.Drawing.Point(12, 64);
+            this.DataDeleteButton.Name = "DataDeleteButton";
+            this.DataDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DataDeleteButton.TabIndex = 3;
+            this.DataDeleteButton.Text = "Удалить";
+            this.DataDeleteButton.UseVisualStyleBackColor = true;
+            this.DataDeleteButton.Click += new System.EventHandler(this.DataDeleteButton_Click);
             // 
-            // button6
+            // NextFormButton
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(259, 386);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Вперед";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.NextFormButton.BackColor = System.Drawing.SystemColors.Control;
+            this.NextFormButton.Location = new System.Drawing.Point(259, 386);
+            this.NextFormButton.Name = "NextFormButton";
+            this.NextFormButton.Size = new System.Drawing.Size(75, 23);
+            this.NextFormButton.TabIndex = 9;
+            this.NextFormButton.Text = "Вперед";
+            this.NextFormButton.UseVisualStyleBackColor = true;
+            this.NextFormButton.Click += new System.EventHandler(this.NextFormButton_Click);
             // 
-            // button5
+            // MainFormButton
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Control;
-            this.button5.Location = new System.Drawing.Point(178, 386);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Главная";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.MainFormButton.BackColor = System.Drawing.SystemColors.Control;
+            this.MainFormButton.Location = new System.Drawing.Point(178, 386);
+            this.MainFormButton.Name = "MainFormButton";
+            this.MainFormButton.Size = new System.Drawing.Size(75, 23);
+            this.MainFormButton.TabIndex = 8;
+            this.MainFormButton.Text = "Главная";
+            this.MainFormButton.UseVisualStyleBackColor = true;
+            this.MainFormButton.Click += new System.EventHandler(this.PreviousFormButton_Click);
             // 
-            // button7
+            // PreviousFormButton
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(97, 386);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Назад";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.PreviousFormButton.BackColor = System.Drawing.SystemColors.Control;
+            this.PreviousFormButton.Location = new System.Drawing.Point(97, 386);
+            this.PreviousFormButton.Name = "PreviousFormButton";
+            this.PreviousFormButton.Size = new System.Drawing.Size(75, 23);
+            this.PreviousFormButton.TabIndex = 7;
+            this.PreviousFormButton.Text = "Назад";
+            this.PreviousFormButton.UseVisualStyleBackColor = true;
+            this.PreviousFormButton.Click += new System.EventHandler(this.MainFormButton_Click);
             // 
-            // button8
+            // DatabaseUpdateButton
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(259, 64);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "Обновить";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.DatabaseUpdateButton.BackColor = System.Drawing.SystemColors.Control;
+            this.DatabaseUpdateButton.Location = new System.Drawing.Point(259, 64);
+            this.DatabaseUpdateButton.Name = "DatabaseUpdateButton";
+            this.DatabaseUpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.DatabaseUpdateButton.TabIndex = 6;
+            this.DatabaseUpdateButton.Text = "Обновить";
+            this.DatabaseUpdateButton.UseVisualStyleBackColor = true;
+            this.DatabaseUpdateButton.Click += new System.EventHandler(this.DatabaseUpdateButton_Click);
             // 
             // TeachersForm
             // 
@@ -183,29 +171,27 @@ namespace Coursework_Practic {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 418);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DatabaseUpdateButton);
+            this.Controls.Add(this.PreviousFormButton);
+            this.Controls.Add(this.MainFormButton);
+            this.Controls.Add(this.NextFormButton);
+            this.Controls.Add(this.DataDeleteButton);
+            this.Controls.Add(this.DataChangeButton);
+            this.Controls.Add(this.DataAddButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TeacherFullNameTextBox);
+            this.Controls.Add(this.TeacherIDTextBox);
             this.Controls.Add(this.dataGridView1);
+            this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TeachersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2 лаба";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = " Преподаватели";
+            this.Load += new System.EventHandler(this.TeachersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,21 +200,18 @@ namespace Coursework_Practic {
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource;
         private Database1DataSet database1DataSet;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TeacherIDTextBox;
+        private System.Windows.Forms.TextBox TeacherFullNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.BindingSource sampleDatabaseDataSetBindingSource1;
-        private System.Windows.Forms.BindingSource sampleDatabaseDataSet1BindingSource;
+        private System.Windows.Forms.Button DataAddButton;
+        private System.Windows.Forms.Button DataChangeButton;
+        private System.Windows.Forms.Button DataDeleteButton;
+        private System.Windows.Forms.Button NextFormButton;
+        private System.Windows.Forms.Button MainFormButton;
+        private System.Windows.Forms.Button PreviousFormButton;
+        private System.Windows.Forms.Button DatabaseUpdateButton;
     }
 }
 

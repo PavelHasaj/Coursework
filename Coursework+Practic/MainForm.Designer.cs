@@ -24,131 +24,106 @@ namespace Coursework_Practic {
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent() {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DatabaseUpdateButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.DataAddButton = new System.Windows.Forms.Button();
-            this.database1DataSet = new Coursework_Practic.Database1DataSet();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
+            this.AppExitButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(230, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(555, 328);
-            this.dataGridView1.TabIndex = 0;
             // 
             // DatabaseUpdateButton
             // 
             this.DatabaseUpdateButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DatabaseUpdateButton.Location = new System.Drawing.Point(124, 64);
+            this.DatabaseUpdateButton.Location = new System.Drawing.Point(12, 32);
             this.DatabaseUpdateButton.Name = "DatabaseUpdateButton";
-            this.DatabaseUpdateButton.Size = new System.Drawing.Size(100, 23);
+            this.DatabaseUpdateButton.Size = new System.Drawing.Size(95, 23);
             this.DatabaseUpdateButton.TabIndex = 1;
-            this.DatabaseUpdateButton.Text = "Обновить";
-            this.DatabaseUpdateButton.UseVisualStyleBackColor = false;
-            this.DatabaseUpdateButton.Click += new System.EventHandler(this.DatabaseUpdateButton_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(124, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID преподавателя";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(124, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Имя преподавателя";
+            this.DatabaseUpdateButton.Text = "Дисциплины";
+            this.DatabaseUpdateButton.UseVisualStyleBackColor = true;
+            this.DatabaseUpdateButton.Click += new System.EventHandler(this.DisciplinesButton_Click);
             // 
             // DataAddButton
             // 
             this.DataAddButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataAddButton.Location = new System.Drawing.Point(12, 64);
+            this.DataAddButton.Location = new System.Drawing.Point(12, 3);
             this.DataAddButton.Name = "DataAddButton";
-            this.DataAddButton.Size = new System.Drawing.Size(100, 23);
+            this.DataAddButton.Size = new System.Drawing.Size(95, 23);
             this.DataAddButton.TabIndex = 1;
-            this.DataAddButton.Text = "Добавить";
-            this.DataAddButton.UseVisualStyleBackColor = false;
-            this.DataAddButton.Click += new System.EventHandler(this.DataAddButton_Click);
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DataAddButton.Text = "Преподаватели";
+            this.DataAddButton.UseVisualStyleBackColor = true;
+            this.DataAddButton.Click += new System.EventHandler(this.TeachersButton_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(75, 160);
+            this.button1.Location = new System.Drawing.Point(12, 61);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Text = "Группы";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.GroupsButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(12, 90);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(95, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Учебный план";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.SyllabusButton_Click);
+            // 
+            // AppExitButton
+            // 
+            this.AppExitButton.Location = new System.Drawing.Point(12, 124);
+            this.AppExitButton.Name = "AppExitButton";
+            this.AppExitButton.Size = new System.Drawing.Size(95, 23);
+            this.AppExitButton.TabIndex = 5;
+            this.AppExitButton.Text = "Закрыть";
+            this.AppExitButton.UseVisualStyleBackColor = true;
+            this.AppExitButton.Click += new System.EventHandler(this.AppExitButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.DataAddButton);
+            this.panel1.Controls.Add(this.AppExitButton);
+            this.panel1.Controls.Add(this.DatabaseUpdateButton);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(124, 159);
+            this.panel1.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 377);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.DataAddButton);
-            this.Controls.Add(this.DatabaseUpdateButton);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(124, 159);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            this.Text = "Главная";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button DatabaseUpdateButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DataAddButton;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AppExitButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

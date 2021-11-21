@@ -36,7 +36,7 @@ namespace Coursework_Practic {
             // DatabaseUpdateButton
             // 
             this.DatabaseUpdateButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DatabaseUpdateButton.Location = new System.Drawing.Point(12, 32);
+            this.DatabaseUpdateButton.Location = new System.Drawing.Point(12, 42);
             this.DatabaseUpdateButton.Name = "DatabaseUpdateButton";
             this.DatabaseUpdateButton.Size = new System.Drawing.Size(95, 23);
             this.DatabaseUpdateButton.TabIndex = 1;
@@ -47,7 +47,7 @@ namespace Coursework_Practic {
             // DataAddButton
             // 
             this.DataAddButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataAddButton.Location = new System.Drawing.Point(12, 3);
+            this.DataAddButton.Location = new System.Drawing.Point(12, 12);
             this.DataAddButton.Name = "DataAddButton";
             this.DataAddButton.Size = new System.Drawing.Size(95, 23);
             this.DataAddButton.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace Coursework_Practic {
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(12, 61);
+            this.button1.Location = new System.Drawing.Point(12, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 4;
@@ -69,7 +69,7 @@ namespace Coursework_Practic {
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(12, 90);
+            this.button2.Location = new System.Drawing.Point(12, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 23);
             this.button2.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace Coursework_Practic {
             // 
             // AppExitButton
             // 
-            this.AppExitButton.Location = new System.Drawing.Point(12, 124);
+            this.AppExitButton.Location = new System.Drawing.Point(12, 134);
             this.AppExitButton.Name = "AppExitButton";
             this.AppExitButton.Size = new System.Drawing.Size(95, 23);
             this.AppExitButton.TabIndex = 5;
@@ -97,7 +97,7 @@ namespace Coursework_Practic {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(124, 159);
+            this.panel1.Size = new System.Drawing.Size(119, 169);
             this.panel1.TabIndex = 6;
             // 
             // MainForm
@@ -105,7 +105,7 @@ namespace Coursework_Practic {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(124, 159);
+            this.ClientSize = new System.Drawing.Size(119, 169);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

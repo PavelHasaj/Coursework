@@ -1,37 +1,99 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
-namespace Coursework_Practic
-{
-    public partial class GroupsForm : Form
-    {
-        public GroupsForm()
-        {
+namespace Coursework_Practic {
+    public partial class GroupsForm : Form {
+        public GroupsForm() {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
+        SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString);
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        Database1DataSet dataSet = new Database1DataSet();
+
+        private void DatabaseUpdate() {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand command_select = new SqlCommand("Select * From Groups", connection);
+            dataAdapter.SelectCommand = command_select;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+        }
+
+        private void GroupsForm_Load(object sender, EventArgs e) {
+            DatabaseUpdate();
+        }
+
+        private void DataAddButton_Click(object sender, EventArgs e) {
+            //добавление записи
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+
+            SqlCommand comand = new SqlCommand("INSERT INTO Groups VALUES (@Group_ID, @Group_Name)", connection);
+            comand.Parameters.AddWithValue("@Group_ID", DisciplineIDTextBox.Text);
+            comand.Parameters.AddWithValue("@Group_Name", DisciplineNameTextBox.Text);
+
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            DatabaseUpdate();//вызов метода обновления dataGridView
+        }
+
+        private void DataChangeButton_Click(object sender, EventArgs e) {
+            SqlCommand command = new SqlCommand("UPDATE Groups SET Group_Name=@Group_Name WHERE Group_ID = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
+            command.Parameters.AddWithValue("@Group_Name", DisciplineNameTextBox.Text);
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+
+            dataAdapter.SelectCommand = command;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            DatabaseUpdate();
+        }
+
+        private void DataDeleteButton_Click(object sender, EventArgs e) {
+            SqlCommand command = new SqlCommand("DELETE FROM Groups WHERE Group_ID = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
+
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+
+            dataAdapter.SelectCommand = command;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            DatabaseUpdate();
+        }
+
+        private void NextFormButton_Click(object sender, EventArgs e) {
+            SyllabusForm form = new SyllabusForm();
+            form.Show();
+            this.Close();
+        }
+
+        private void MainFormButton_Click(object sender, EventArgs e) {
             Program.mainForm.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Program.disciplinesForm.Show();
-            this.Hide();
+        private void DatabaseUpdateButton_Click(object sender, EventArgs e) {
+            DatabaseUpdate();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
+        private void PreviousFormButton_Click(object sender, EventArgs e) {
+            DisciplinesForm form = new DisciplinesForm();
+            form.Show();
+            this.Close();
         }
     }
 }

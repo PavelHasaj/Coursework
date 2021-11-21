@@ -76,7 +76,7 @@ namespace Coursework_Practic {
 
         private void NextFormButton_Click(object sender, EventArgs e)
         {
-            GroupsForm form = new GroupsForm();
+            DisciplinesForm form = new DisciplinesForm();
             form.Show();
             this.Close();
         }

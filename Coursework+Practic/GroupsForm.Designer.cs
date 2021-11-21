@@ -52,6 +52,7 @@
             this.DatabaseUpdateButton.TabIndex = 30;
             this.DatabaseUpdateButton.Text = "Обновить";
             this.DatabaseUpdateButton.UseVisualStyleBackColor = true;
+            this.DatabaseUpdateButton.Click += new System.EventHandler(this.DatabaseUpdateButton_Click);
             // 
             // PreviousFormButton
             // 
@@ -62,6 +63,7 @@
             this.PreviousFormButton.TabIndex = 31;
             this.PreviousFormButton.Text = "Назад";
             this.PreviousFormButton.UseVisualStyleBackColor = true;
+            this.PreviousFormButton.Click += new System.EventHandler(this.PreviousFormButton_Click);
             // 
             // MainFormButton
             // 
@@ -72,6 +74,7 @@
             this.MainFormButton.TabIndex = 32;
             this.MainFormButton.Text = "Главная";
             this.MainFormButton.UseVisualStyleBackColor = true;
+            this.MainFormButton.Click += new System.EventHandler(this.MainFormButton_Click);
             // 
             // NextFormButton
             // 
@@ -82,6 +85,7 @@
             this.NextFormButton.TabIndex = 33;
             this.NextFormButton.Text = "Вперед";
             this.NextFormButton.UseVisualStyleBackColor = true;
+            this.NextFormButton.Click += new System.EventHandler(this.NextFormButton_Click);
             // 
             // DataDeleteButton
             // 
@@ -92,6 +96,7 @@
             this.DataDeleteButton.TabIndex = 27;
             this.DataDeleteButton.Text = "Удалить";
             this.DataDeleteButton.UseVisualStyleBackColor = true;
+            this.DataDeleteButton.Click += new System.EventHandler(this.DataDeleteButton_Click);
             // 
             // DataChangeButton
             // 
@@ -102,6 +107,7 @@
             this.DataChangeButton.TabIndex = 28;
             this.DataChangeButton.Text = "Изменить";
             this.DataChangeButton.UseVisualStyleBackColor = true;
+            this.DataChangeButton.Click += new System.EventHandler(this.DataChangeButton_Click);
             // 
             // DataAddButton
             // 
@@ -112,6 +118,7 @@
             this.DataAddButton.TabIndex = 29;
             this.DataAddButton.Text = "Добавить";
             this.DataAddButton.UseVisualStyleBackColor = true;
+            this.DataAddButton.Click += new System.EventHandler(this.DataAddButton_Click);
             // 
             // label2
             // 
@@ -152,6 +159,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(336, 11);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(424, 401);
             this.dataGridView1.TabIndex = 22;
             // 
@@ -178,6 +186,7 @@
             this.Name = "GroupsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Группы";
+            this.Load += new System.EventHandler(this.GroupsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

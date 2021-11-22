@@ -48,6 +48,8 @@ namespace Coursework_Practic {
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
+            this.SelectFromTablesButton = new System.Windows.Forms.Button();
+            this.ToExcelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@ namespace Coursework_Practic {
             // DataDeleteButton
             // 
             this.DataDeleteButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataDeleteButton.Location = new System.Drawing.Point(15, 169);
+            this.DataDeleteButton.Location = new System.Drawing.Point(12, 169);
             this.DataDeleteButton.Name = "DataDeleteButton";
             this.DataDeleteButton.Size = new System.Drawing.Size(76, 23);
             this.DataDeleteButton.TabIndex = 39;
@@ -275,11 +277,33 @@ namespace Coursework_Practic {
             this.FilterTextBox.TabIndex = 48;
             this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
+            // SelectFromTablesButton
+            // 
+            this.SelectFromTablesButton.Location = new System.Drawing.Point(266, 255);
+            this.SelectFromTablesButton.Name = "SelectFromTablesButton";
+            this.SelectFromTablesButton.Size = new System.Drawing.Size(76, 23);
+            this.SelectFromTablesButton.TabIndex = 49;
+            this.SelectFromTablesButton.Text = "Выборка";
+            this.SelectFromTablesButton.UseVisualStyleBackColor = true;
+            this.SelectFromTablesButton.Click += new System.EventHandler(this.SelectFromTablesButton_Click);
+            // 
+            // ToExcelButton
+            // 
+            this.ToExcelButton.Location = new System.Drawing.Point(171, 255);
+            this.ToExcelButton.Name = "ToExcelButton";
+            this.ToExcelButton.Size = new System.Drawing.Size(89, 23);
+            this.ToExcelButton.TabIndex = 50;
+            this.ToExcelButton.Text = "Вывод в Excel";
+            this.ToExcelButton.UseVisualStyleBackColor = true;
+            this.ToExcelButton.Click += new System.EventHandler(this.ToExcelButton_Click);
+            // 
             // SyllabusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 427);
+            this.Controls.Add(this.ToExcelButton);
+            this.Controls.Add(this.SelectFromTablesButton);
             this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -341,5 +365,7 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox FilterTextBox;
+        private System.Windows.Forms.Button SelectFromTablesButton;
+        private System.Windows.Forms.Button ToExcelButton;
     }
 }

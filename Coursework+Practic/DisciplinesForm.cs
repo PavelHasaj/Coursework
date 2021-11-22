@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace Coursework_Practic
-{
-    public partial class DisciplinesForm : Form
-    {
-        public DisciplinesForm()
-        {
+namespace Coursework_Practic {
+    public partial class DisciplinesForm : Form {
+        public DisciplinesForm() {
             InitializeComponent();
         }
 

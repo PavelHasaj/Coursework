@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Coursework_Practic {
     public partial class TeachersForm : Form {
@@ -76,26 +76,22 @@ namespace Coursework_Practic {
             DatabaseUpdate();
         }
 
-        private void NextFormButton_Click(object sender, EventArgs e)
-        {
+        private void NextFormButton_Click(object sender, EventArgs e) {
             DisciplinesForm form = new DisciplinesForm();
             form.Show();
             this.Close();
         }
 
-        private void MainFormButton_Click(object sender, EventArgs e)
-        {
+        private void MainFormButton_Click(object sender, EventArgs e) {
             Program.mainForm.Show();
             this.Close();
         }
 
-        private void DatabaseUpdateButton_Click(object sender, EventArgs e)
-        {
+        private void DatabaseUpdateButton_Click(object sender, EventArgs e) {
             DatabaseUpdate();
         }
 
-        private void PreviousFormButton_Click(object sender, EventArgs e)
-        {
+        private void PreviousFormButton_Click(object sender, EventArgs e) {
             Program.mainForm.Show();
             this.Close();
         }

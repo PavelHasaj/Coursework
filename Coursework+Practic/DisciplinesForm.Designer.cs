@@ -44,8 +44,10 @@ namespace Coursework_Practic
             this.DisciplineNameTextBox = new System.Windows.Forms.TextBox();
             this.DisciplineIDTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SearchButton = new System.Windows.Forms.Button();
+            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -181,24 +183,41 @@ namespace Coursework_Practic
             this.dataGridView1.Size = new System.Drawing.Size(424, 401);
             this.dataGridView1.TabIndex = 10;
             // 
-            // SearchButton
+            // FilterTextBox
             // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
-            this.SearchButton.Location = new System.Drawing.Point(15, 89);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(80, 23);
-            this.SearchButton.TabIndex = 43;
-            this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.FilterTextBox.Location = new System.Drawing.Point(167, 115);
+            this.FilterTextBox.Name = "FilterTextBox";
+            this.FilterTextBox.Size = new System.Drawing.Size(191, 20);
+            this.FilterTextBox.TabIndex = 47;
+            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SearchTextBox.Location = new System.Drawing.Point(101, 92);
+            this.SearchTextBox.Location = new System.Drawing.Point(167, 89);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(257, 20);
-            this.SearchTextBox.TabIndex = 42;
+            this.SearchTextBox.Size = new System.Drawing.Size(191, 20);
+            this.SearchTextBox.TabIndex = 48;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 13);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Фильтрация по дисциплине";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Поиск";
             // 
             // DisciplinesForm
             // 
@@ -206,8 +225,10 @@ namespace Coursework_Practic
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 424);
-            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
@@ -249,7 +270,9 @@ namespace Coursework_Practic
         private System.Windows.Forms.TextBox DisciplineNameTextBox;
         private System.Windows.Forms.TextBox DisciplineIDTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

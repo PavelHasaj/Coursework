@@ -40,15 +40,17 @@
             this.DisciplineNameTextBox = new System.Windows.Forms.TextBox();
             this.DisciplineIDTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SearchButton = new System.Windows.Forms.Button();
+            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // DatabaseUpdateButton
             // 
             this.DatabaseUpdateButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DatabaseUpdateButton.Location = new System.Drawing.Point(256, 64);
+            this.DatabaseUpdateButton.Location = new System.Drawing.Point(255, 64);
             this.DatabaseUpdateButton.Name = "DatabaseUpdateButton";
             this.DatabaseUpdateButton.Size = new System.Drawing.Size(75, 23);
             this.DatabaseUpdateButton.TabIndex = 30;
@@ -92,9 +94,9 @@
             // DataDeleteButton
             // 
             this.DataDeleteButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataDeleteButton.Location = new System.Drawing.Point(13, 64);
+            this.DataDeleteButton.Location = new System.Drawing.Point(15, 64);
             this.DataDeleteButton.Name = "DataDeleteButton";
-            this.DataDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DataDeleteButton.Size = new System.Drawing.Size(72, 23);
             this.DataDeleteButton.TabIndex = 27;
             this.DataDeleteButton.Text = "Удалить";
             this.DataDeleteButton.UseVisualStyleBackColor = true;
@@ -103,7 +105,7 @@
             // DataChangeButton
             // 
             this.DataChangeButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataChangeButton.Location = new System.Drawing.Point(94, 64);
+            this.DataChangeButton.Location = new System.Drawing.Point(93, 64);
             this.DataChangeButton.Name = "DataChangeButton";
             this.DataChangeButton.Size = new System.Drawing.Size(75, 23);
             this.DataChangeButton.TabIndex = 28;
@@ -114,7 +116,7 @@
             // DataAddButton
             // 
             this.DataAddButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataAddButton.Location = new System.Drawing.Point(175, 64);
+            this.DataAddButton.Location = new System.Drawing.Point(174, 64);
             this.DataAddButton.Name = "DataAddButton";
             this.DataAddButton.Size = new System.Drawing.Size(75, 23);
             this.DataAddButton.TabIndex = 29;
@@ -125,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 41);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 24;
@@ -134,7 +136,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 25;
@@ -143,17 +145,17 @@
             // DisciplineNameTextBox
             // 
             this.DisciplineNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.DisciplineNameTextBox.Location = new System.Drawing.Point(112, 38);
+            this.DisciplineNameTextBox.Location = new System.Drawing.Point(114, 38);
             this.DisciplineNameTextBox.Name = "DisciplineNameTextBox";
-            this.DisciplineNameTextBox.Size = new System.Drawing.Size(219, 20);
+            this.DisciplineNameTextBox.Size = new System.Drawing.Size(216, 20);
             this.DisciplineNameTextBox.TabIndex = 26;
             // 
             // DisciplineIDTextBox
             // 
             this.DisciplineIDTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.DisciplineIDTextBox.Location = new System.Drawing.Point(112, 12);
+            this.DisciplineIDTextBox.Location = new System.Drawing.Point(114, 11);
             this.DisciplineIDTextBox.Name = "DisciplineIDTextBox";
-            this.DisciplineIDTextBox.Size = new System.Drawing.Size(219, 20);
+            this.DisciplineIDTextBox.Size = new System.Drawing.Size(216, 20);
             this.DisciplineIDTextBox.TabIndex = 23;
             // 
             // dataGridView1
@@ -165,24 +167,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(424, 401);
             this.dataGridView1.TabIndex = 22;
             // 
-            // SearchButton
+            // FilterTextBox
             // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
-            this.SearchButton.Location = new System.Drawing.Point(13, 93);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(71, 23);
-            this.SearchButton.TabIndex = 41;
-            this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.FilterTextBox.Location = new System.Drawing.Point(141, 119);
+            this.FilterTextBox.Name = "FilterTextBox";
+            this.FilterTextBox.Size = new System.Drawing.Size(190, 20);
+            this.FilterTextBox.TabIndex = 51;
+            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SearchTextBox.Location = new System.Drawing.Point(98, 96);
+            this.SearchTextBox.Location = new System.Drawing.Point(141, 93);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(233, 20);
-            this.SearchTextBox.TabIndex = 40;
+            this.SearchTextBox.Size = new System.Drawing.Size(189, 20);
+            this.SearchTextBox.TabIndex = 52;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Фильтрация по группе";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Поиск";
             // 
             // GroupsForm
             // 
@@ -190,8 +209,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(769, 424);
-            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
@@ -230,7 +251,9 @@
         private System.Windows.Forms.TextBox DisciplineNameTextBox;
         private System.Windows.Forms.TextBox DisciplineIDTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

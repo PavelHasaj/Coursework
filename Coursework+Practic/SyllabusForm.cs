@@ -110,16 +110,28 @@ namespace Coursework_Practic {
             this.Close();
         }
 
-        private void SearchButton_Click(object sender, EventArgs e) {
+        private void SearchTextBox_TextChanged(object sender, EventArgs e) {
             for (int i = 0; i < dataGridView1.RowCount; i++) {
                 dataGridView1.Rows[i].Selected = false;
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     if (dataGridView1.Rows[i].Cells[j].Value != null)
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(SearchTextBox.Text)) {
                             dataGridView1.Rows[i].Selected = true;
-                            break;
+                            return;
                         }
             }
+        }
+
+        private void FilterTextBox_TextChanged(object sender, EventArgs e) {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT * FROM Syllabus WHERE Number_of_hours LIKE @Number_of_hours", connection);
+            comand.Parameters.AddWithValue("@Number_of_hours", "%" + FilterTextBox.Text + "%");
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
         }
     }
 }

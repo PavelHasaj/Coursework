@@ -44,8 +44,10 @@ namespace Coursework_Practic {
             this.label5 = new System.Windows.Forms.Label();
             this.ClassTimeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.FilterTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,35 +239,54 @@ namespace Coursework_Practic {
             this.label6.TabIndex = 36;
             this.label6.Text = "Время пары";
             // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
-            this.SearchButton.Location = new System.Drawing.Point(15, 198);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(79, 23);
-            this.SearchButton.TabIndex = 39;
-            this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SearchTextBox.Location = new System.Drawing.Point(101, 201);
+            this.SearchTextBox.Location = new System.Drawing.Point(171, 201);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(241, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(171, 20);
             this.SearchTextBox.TabIndex = 38;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(153, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Фильтрация по кол-ву часов";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Поиск";
+            // 
+            // FilterTextBox
+            // 
+            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.FilterTextBox.Location = new System.Drawing.Point(171, 229);
+            this.FilterTextBox.Name = "FilterTextBox";
+            this.FilterTextBox.Size = new System.Drawing.Size(170, 20);
+            this.FilterTextBox.TabIndex = 48;
+            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
             // SyllabusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 427);
+            this.Controls.Add(this.FilterTextBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
             this.Controls.Add(this.NextFormButton);
-            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.DataDeleteButton);
             this.Controls.Add(this.DataChangeButton);
             this.Controls.Add(this.DataAddButton);
@@ -316,7 +337,9 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ClassTimeTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox FilterTextBox;
     }
 }

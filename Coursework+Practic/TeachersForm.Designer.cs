@@ -37,10 +37,10 @@ namespace Coursework_Practic {
             this.MainFormButton = new System.Windows.Forms.Button();
             this.PreviousFormButton = new System.Windows.Forms.Button();
             this.DatabaseUpdateButton = new System.Windows.Forms.Button();
-            this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.FilterButton = new System.Windows.Forms.Button();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
@@ -170,43 +170,41 @@ namespace Coursework_Practic {
             this.DatabaseUpdateButton.UseVisualStyleBackColor = true;
             this.DatabaseUpdateButton.Click += new System.EventHandler(this.DatabaseUpdateButton_Click);
             // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
-            this.SearchButton.Location = new System.Drawing.Point(15, 93);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(80, 23);
-            this.SearchButton.TabIndex = 45;
-            this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SearchTextBox.Location = new System.Drawing.Point(101, 96);
+            this.SearchTextBox.Location = new System.Drawing.Point(134, 96);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(233, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(200, 20);
             this.SearchTextBox.TabIndex = 44;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
-            // FilterButton
-            // 
-            this.FilterButton.Location = new System.Drawing.Point(15, 122);
-            this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(153, 23);
-            this.FilterButton.TabIndex = 46;
-            this.FilterButton.Text = "Фильтрация по фамилии";
-            this.FilterButton.UseVisualStyleBackColor = true;
-            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
             // 
             // FilterTextBox
             // 
             this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.FilterTextBox.Location = new System.Drawing.Point(174, 124);
+            this.FilterTextBox.Location = new System.Drawing.Point(134, 124);
             this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(160, 20);
+            this.FilterTextBox.Size = new System.Drawing.Size(200, 20);
             this.FilterTextBox.TabIndex = 44;
+            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Поиск";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Фильтрация по ФИО";
             // 
             // TeachersForm
             // 
@@ -214,8 +212,6 @@ namespace Coursework_Practic {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 418);
-            this.Controls.Add(this.FilterButton);
-            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.DatabaseUpdateButton);
@@ -226,6 +222,8 @@ namespace Coursework_Practic {
             this.Controls.Add(this.DataChangeButton);
             this.Controls.Add(this.DataAddButton);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TeacherFullNameTextBox);
             this.Controls.Add(this.TeacherIDTextBox);
@@ -259,10 +257,10 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Button MainFormButton;
         private System.Windows.Forms.Button PreviousFormButton;
         private System.Windows.Forms.Button DatabaseUpdateButton;
-        private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.TextBox FilterTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

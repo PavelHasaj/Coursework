@@ -20,6 +20,8 @@ namespace Coursework_Practic {
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
+            dataGridView1.Columns[0].HeaderText = "ID преподавателя";
+            dataGridView1.Columns[1].HeaderText = "ФИО";
         }
 
         private void TeachersForm_Load(object sender, EventArgs e) {
@@ -96,6 +98,43 @@ namespace Coursework_Practic {
         {
             Program.mainForm.Show();
             this.Close();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e) {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT * FROM Teachers WHERE Teacher_FullName = 'фамилия, которую ищем'", connection);
+            comand.Parameters.AddWithValue("@Teacher_FullName", SearchTextBox.Text);
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+        }
+
+        private void FilterButton_Click(object sender, EventArgs e) {
+            //SELECT* FROM TableWithLastNames WHERE ColumnWithLastNames = 'фамилия, которую ищем'
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT * FROM Teachers WHERE Teacher_FullName = 'фамилия, которую ищем'", connection);
+            comand.Parameters.AddWithValue("@Teacher_FullName", SearchTextBox.Text);
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e) {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT * FROM Teachers WHERE Teacher_FullName LIKE @Teacher_FullName", connection);
+            comand.Parameters.AddWithValue("@Teacher_FullName", SearchTextBox.Text);
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
         }
     }
 }

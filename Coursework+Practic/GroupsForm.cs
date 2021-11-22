@@ -21,6 +21,8 @@ namespace Coursework_Practic {
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
+            dataGridView1.Columns[0].HeaderText = "ID группы";
+            dataGridView1.Columns[1].HeaderText = "Название группы";
         }
 
         private void GroupsForm_Load(object sender, EventArgs e) {
@@ -94,6 +96,18 @@ namespace Coursework_Practic {
             DisciplinesForm form = new DisciplinesForm();
             form.Show();
             this.Close();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e) {
+            for (int i = 0; i < dataGridView1.RowCount; i++) {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(SearchTextBox.Text)) {
+                            dataGridView1.Rows[i].Selected = true;
+                            break;
+                        }
+            }
         }
     }
 }

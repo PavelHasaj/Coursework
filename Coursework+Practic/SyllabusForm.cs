@@ -16,11 +16,17 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand command_select = new SqlCommand("Select * From Syllabus", connection);
+            SqlCommand command_select = new SqlCommand("SELECT * FROM Syllabus", connection);
             dataAdapter.SelectCommand = command_select;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
+            dataGridView1.Columns[0].HeaderText = "ID записи";
+            dataGridView1.Columns[1].HeaderText = "ID группы";
+            dataGridView1.Columns[2].HeaderText = "ID преподавателя";
+            dataGridView1.Columns[3].HeaderText = "ID дисциплины";
+            dataGridView1.Columns[4].HeaderText = "Кол-во часов";
+            dataGridView1.Columns[5].HeaderText = "Время пары";
         }
 
         private void SyllabusForm_Load(object sender, EventArgs e) {
@@ -102,6 +108,18 @@ namespace Coursework_Practic {
             GroupsForm form = new GroupsForm();
             form.Show();
             this.Close();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e) {
+            for (int i = 0; i < dataGridView1.RowCount; i++) {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(SearchTextBox.Text)) {
+                            dataGridView1.Rows[i].Selected = true;
+                            break;
+                        }
+            }
         }
     }
 }

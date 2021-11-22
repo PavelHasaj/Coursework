@@ -44,6 +44,8 @@ namespace Coursework_Practic
             this.DisciplineNameTextBox = new System.Windows.Forms.TextBox();
             this.DisciplineIDTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,12 +181,33 @@ namespace Coursework_Practic
             this.dataGridView1.Size = new System.Drawing.Size(424, 401);
             this.dataGridView1.TabIndex = 10;
             // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
+            this.SearchButton.Location = new System.Drawing.Point(15, 89);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(80, 23);
+            this.SearchButton.TabIndex = 43;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.SearchTextBox.Location = new System.Drawing.Point(101, 92);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(257, 20);
+            this.SearchTextBox.TabIndex = 42;
+            // 
             // DisciplinesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 424);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
@@ -226,5 +249,7 @@ namespace Coursework_Practic
         private System.Windows.Forms.TextBox DisciplineNameTextBox;
         private System.Windows.Forms.TextBox DisciplineIDTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }

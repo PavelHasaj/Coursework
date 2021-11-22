@@ -44,6 +44,8 @@ namespace Coursework_Practic {
             this.label5 = new System.Windows.Forms.Label();
             this.ClassTimeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@ namespace Coursework_Practic {
             // DataDeleteButton
             // 
             this.DataDeleteButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataDeleteButton.Location = new System.Drawing.Point(16, 169);
+            this.DataDeleteButton.Location = new System.Drawing.Point(15, 169);
             this.DataDeleteButton.Name = "DataDeleteButton";
             this.DataDeleteButton.Size = new System.Drawing.Size(76, 23);
             this.DataDeleteButton.TabIndex = 39;
@@ -127,7 +129,7 @@ namespace Coursework_Practic {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 42);
+            this.label2.Location = new System.Drawing.Point(12, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 36;
@@ -178,7 +180,7 @@ namespace Coursework_Practic {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 68);
+            this.label3.Location = new System.Drawing.Point(12, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 36;
@@ -229,11 +231,30 @@ namespace Coursework_Practic {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 146);
+            this.label6.Location = new System.Drawing.Point(12, 146);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 36;
             this.label6.Text = "Время пары";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
+            this.SearchButton.Location = new System.Drawing.Point(15, 198);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(79, 23);
+            this.SearchButton.TabIndex = 39;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.SearchTextBox.Location = new System.Drawing.Point(101, 201);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(241, 20);
+            this.SearchTextBox.TabIndex = 38;
             // 
             // SyllabusForm
             // 
@@ -244,6 +265,7 @@ namespace Coursework_Practic {
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
             this.Controls.Add(this.NextFormButton);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.DataDeleteButton);
             this.Controls.Add(this.DataChangeButton);
             this.Controls.Add(this.DataAddButton);
@@ -253,6 +275,7 @@ namespace Coursework_Practic {
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.ClassTimeTextBox);
             this.Controls.Add(this.NumberOfHoursTextBox);
             this.Controls.Add(this.DisciplineIDTextBox);
@@ -293,5 +316,7 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ClassTimeTextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }

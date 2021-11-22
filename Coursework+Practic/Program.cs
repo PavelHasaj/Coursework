@@ -9,10 +9,6 @@ namespace Coursework_Practic {
         /// 
 
         public static MainForm mainForm = new MainForm();
-        public static TeachersForm teachersForm = new TeachersForm();
-        public static DisciplinesForm disciplinesForm = new DisciplinesForm();
-        public static GroupsForm groupsForm = new GroupsForm();
-        public static SyllabusForm syllabusForm = new SyllabusForm();
 
         [STAThread]
         static void Main() {

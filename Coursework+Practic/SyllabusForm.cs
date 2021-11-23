@@ -170,7 +170,7 @@ namespace Coursework_Practic {
             ExcelApp.Cells[1, 6] = "Время пары";
             //Для переноса данных применил такой цикл (dgvHadTovar — это имя моего компонента DataGridView):
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
-                for (int j = 0; j < dataGridView1.RowCount; j++) {
+                for (int j = 0; j < dataGridView1.RowCount-1; j++) {
                     ExcelApp.Cells[j + 2, i + 1] = (dataGridView1[i, j].Value).ToString();
                 }
             }

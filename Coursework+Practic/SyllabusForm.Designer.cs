@@ -170,7 +170,7 @@ namespace Coursework_Practic {
             this.dataGridView1.Location = new System.Drawing.Point(348, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(618, 401);
             this.dataGridView1.TabIndex = 34;
             // 
             // TeacherIDTextBox
@@ -301,7 +301,7 @@ namespace Coursework_Practic {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 427);
+            this.ClientSize = new System.Drawing.Size(978, 427);
             this.Controls.Add(this.ToExcelButton);
             this.Controls.Add(this.SelectFromTablesButton);
             this.Controls.Add(this.FilterTextBox);

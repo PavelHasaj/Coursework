@@ -153,6 +153,12 @@ namespace Coursework_Practic {
                     i--;
                 }
             }
+            dataGridView1.Columns[0].HeaderText = "ID записи";
+            dataGridView1.Columns[1].HeaderText = "Кол-во часов";
+            dataGridView1.Columns[2].HeaderText = "Время занятий";
+            dataGridView1.Columns[3].HeaderText = "Группа";
+            dataGridView1.Columns[4].HeaderText = "Преподаватель";
+            dataGridView1.Columns[5].HeaderText = "Дисциплина";
         }
 
         private void ToExcelButton_Click(object sender, EventArgs e) {
@@ -168,7 +174,6 @@ namespace Coursework_Practic {
             ExcelApp.Cells[1, 4] = "ID лисциплины";
             ExcelApp.Cells[1, 5] = "Кол-во часов";
             ExcelApp.Cells[1, 6] = "Время пары";
-            //Для переноса данных применил такой цикл (dgvHadTovar — это имя моего компонента DataGridView):
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
                 for (int j = 0; j < dataGridView1.RowCount-1; j++) {
                     ExcelApp.Cells[j + 2, i + 1] = (dataGridView1[i, j].Value).ToString();

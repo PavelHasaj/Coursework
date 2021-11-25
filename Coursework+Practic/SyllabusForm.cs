@@ -144,15 +144,7 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
 
-            bool IsColumnEmpty;
-
-            for (int i = 0; i < dataGridView1.Columns.Count; i++) {
-                IsColumnEmpty = dataGridView1.Rows[0].Cells[i].Value.ToString() == "";
-                if (IsColumnEmpty) {
-                    dataGridView1.Columns.RemoveAt(i);
-                    i--;
-                }
-            }
+            Program.DeleteEmptyColumns(dataGridView1);
             dataGridView1.Columns[0].HeaderText = "ID записи";
             dataGridView1.Columns[1].HeaderText = "Кол-во часов";
             dataGridView1.Columns[2].HeaderText = "Время занятий";
@@ -162,6 +154,23 @@ namespace Coursework_Practic {
         }
 
         private void ToExcelButton_Click(object sender, EventArgs e) {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT Syllabus.Id_zap, Syllabus.Number_of_hours, Syllabus.Class_time, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            Program.DeleteEmptyColumns(dataGridView1);
+            dataGridView1.Columns[0].HeaderText = "ID записи";
+            dataGridView1.Columns[1].HeaderText = "Кол-во часов";
+            dataGridView1.Columns[2].HeaderText = "Время занятий";
+            dataGridView1.Columns[3].HeaderText = "Группа";
+            dataGridView1.Columns[4].HeaderText = "Преподаватель";
+            dataGridView1.Columns[5].HeaderText = "Дисциплина";
+
             Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
             //Создаем рабочую книгу:
             ExcelApp.Application.Workbooks.Add(Type.Missing);
@@ -169,11 +178,11 @@ namespace Coursework_Practic {
             ExcelApp.Columns.ColumnWidth = 15;
             //Задать значение ячейки можно так:
             ExcelApp.Cells[1, 1] = "ID записи";
-            ExcelApp.Cells[1, 2] = "ID группы";
-            ExcelApp.Cells[1, 3] = "ID преподавателя";
-            ExcelApp.Cells[1, 4] = "ID лисциплины";
-            ExcelApp.Cells[1, 5] = "Кол-во часов";
-            ExcelApp.Cells[1, 6] = "Время пары";
+            ExcelApp.Cells[1, 2] = "Кол-во часов";
+            ExcelApp.Cells[1, 3] = "Время занятий";
+            ExcelApp.Cells[1, 4] = "Группа";
+            ExcelApp.Cells[1, 5] = "Преподаватель";
+            ExcelApp.Cells[1, 6] = "Дисциплина";
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
                 for (int j = 0; j < dataGridView1.RowCount-1; j++) {
                     ExcelApp.Cells[j + 2, i + 1] = (dataGridView1[i, j].Value).ToString();
@@ -182,6 +191,19 @@ namespace Coursework_Practic {
             //j + 2, потому что первая строка отведена для подписей столбцов!
             //И для отображения полученного результата, необходимо показать документ:
             ExcelApp.Visible = true;
+        }
+
+        private void SumOfHoursByGroups_Click(object sender, EventArgs e) {
+            dataGridView1.DataSource = null;
+            dataSet.Clear();
+            connection.Open();
+            SqlCommand comand = new SqlCommand("SELECT Groups.Group_Name, SUM(Syllabus.Number_of_hours) AS NumberOfOrders FROM Syllabus LEFT JOIN Groups ON Syllabus.GroupID = Groups.Group_ID GROUP BY Group_Name; ", connection);
+            dataAdapter.SelectCommand = comand;
+            dataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+            connection.Close();
+
+            Program.DeleteEmptyColumns(dataGridView1);
         }
     }
 }

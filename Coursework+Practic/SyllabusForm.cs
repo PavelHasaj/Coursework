@@ -16,8 +16,8 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand command_select = new SqlCommand("SELECT * FROM Syllabus", connection);
-            dataAdapter.SelectCommand = command_select;
+            SqlCommand command = new SqlCommand("SELECT * FROM Syllabus", connection);
+            dataAdapter.SelectCommand = command;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();

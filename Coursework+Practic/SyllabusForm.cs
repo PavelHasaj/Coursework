@@ -204,6 +204,13 @@ namespace Coursework_Practic {
             connection.Close();
 
             Program.DeleteEmptyColumns(dataGridView1);
+            dataGridView1.Columns[0].HeaderText = "Название группы";
+            dataGridView1.Columns[1].HeaderText = "Кол-во часов";
+        }
+
+        private void SyllabusForm_FormClosing(object sender, FormClosingEventArgs e) {
+            Program.mainForm.Show();
+            this.Close();
         }
     }
 }

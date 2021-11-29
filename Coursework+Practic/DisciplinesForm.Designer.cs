@@ -246,6 +246,7 @@ namespace Coursework_Practic
             this.Name = "DisciplinesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Дисциплины";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisciplinesForm_FormClosing);
             this.Load += new System.EventHandler(this.DisciplinesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).EndInit();

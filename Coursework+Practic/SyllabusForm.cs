@@ -210,7 +210,6 @@ namespace Coursework_Practic {
 
         private void SyllabusForm_FormClosing(object sender, FormClosingEventArgs e) {
             Program.mainForm.Show();
-            this.Close();
         }
     }
 }

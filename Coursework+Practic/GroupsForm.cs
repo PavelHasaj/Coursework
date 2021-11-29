@@ -120,10 +120,9 @@ namespace Coursework_Practic {
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
-        }
 
-        private void GroupsForm_FormClosing(object sender, FormClosingEventArgs e) {
-            Program.mainForm.Show();
+            dataGridView1.Columns[0].HeaderText = "ID записи";
+            dataGridView1.Columns[1].HeaderText = "Название группы";
         }
     }
 }

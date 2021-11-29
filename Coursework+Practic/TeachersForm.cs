@@ -119,9 +119,5 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
         }
-
-        private void TeachersForm_FormClosing(object sender, FormClosingEventArgs e) {
-            Program.mainForm.Show();
-        }
     }
 }

@@ -344,7 +344,6 @@ namespace Coursework_Practic {
             this.MinimizeBox = false;
             this.Name = "SyllabusForm";
             this.Text = "Учебный план";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SyllabusForm_FormClosing);
             this.Load += new System.EventHandler(this.SyllabusForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

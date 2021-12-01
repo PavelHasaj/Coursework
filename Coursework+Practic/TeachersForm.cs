@@ -99,11 +99,12 @@ namespace Coursework_Practic {
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {
             for (int i = 0; i < dataGridView1.RowCount; i++) {
                 dataGridView1.Rows[i].Selected = false;
-                if (dataGridView1.Rows[i].Cells[1].Value != null)
+                if (dataGridView1.Rows[i].Cells[1].Value != null) {
                     if (dataGridView1.Rows[i].Cells[1].Value.ToString().Contains(SearchTextBox.Text)) {
                         dataGridView1.Rows[i].Selected = true;
                         return;
                     }
+                }
             }
         }
 

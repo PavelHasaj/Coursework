@@ -113,12 +113,14 @@ namespace Coursework_Practic {
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {
             for (int i = 0; i < dataGridView1.RowCount; i++) {
                 dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                for (int j = 0; j < dataGridView1.ColumnCount; j++) {
+                    if (dataGridView1.Rows[i].Cells[j].Value != null) {
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(SearchTextBox.Text)) {
                             dataGridView1.Rows[i].Selected = true;
                             return;
                         }
+                    }
+                }
             }
         }
 
@@ -191,7 +193,7 @@ namespace Coursework_Practic {
             ExcelApp.Cells[1, 5] = "Преподаватель";
             ExcelApp.Cells[1, 6] = "Дисциплина";
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
-                for (int j = 0; j < dataGridView1.RowCount-1; j++) {
+                for (int j = 0; j < dataGridView1.RowCount - 1; j++) {
                     ExcelApp.Cells[j + 2, i + 1] = (dataGridView1[i, j].Value).ToString();
                 }
             }

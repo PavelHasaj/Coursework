@@ -53,6 +53,7 @@ namespace Coursework_Practic {
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(448, 397);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabStop = false;
             // 
             // database1DataSet
             // 
@@ -70,7 +71,7 @@ namespace Coursework_Practic {
             // TeacherFullNameTextBox
             // 
             this.TeacherFullNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.TeacherFullNameTextBox.Location = new System.Drawing.Point(116, 34);
+            this.TeacherFullNameTextBox.Location = new System.Drawing.Point(116, 38);
             this.TeacherFullNameTextBox.Name = "TeacherFullNameTextBox";
             this.TeacherFullNameTextBox.Size = new System.Drawing.Size(218, 20);
             this.TeacherFullNameTextBox.TabIndex = 2;
@@ -132,7 +133,7 @@ namespace Coursework_Practic {
             this.NextFormButton.Location = new System.Drawing.Point(259, 386);
             this.NextFormButton.Name = "NextFormButton";
             this.NextFormButton.Size = new System.Drawing.Size(75, 23);
-            this.NextFormButton.TabIndex = 9;
+            this.NextFormButton.TabIndex = 11;
             this.NextFormButton.Text = "Вперед";
             this.NextFormButton.UseVisualStyleBackColor = true;
             this.NextFormButton.Click += new System.EventHandler(this.NextFormButton_Click);
@@ -143,7 +144,7 @@ namespace Coursework_Practic {
             this.MainFormButton.Location = new System.Drawing.Point(178, 386);
             this.MainFormButton.Name = "MainFormButton";
             this.MainFormButton.Size = new System.Drawing.Size(75, 23);
-            this.MainFormButton.TabIndex = 8;
+            this.MainFormButton.TabIndex = 10;
             this.MainFormButton.Text = "Главная";
             this.MainFormButton.UseVisualStyleBackColor = true;
             this.MainFormButton.Click += new System.EventHandler(this.PreviousFormButton_Click);
@@ -154,7 +155,7 @@ namespace Coursework_Practic {
             this.PreviousFormButton.Location = new System.Drawing.Point(97, 386);
             this.PreviousFormButton.Name = "PreviousFormButton";
             this.PreviousFormButton.Size = new System.Drawing.Size(75, 23);
-            this.PreviousFormButton.TabIndex = 7;
+            this.PreviousFormButton.TabIndex = 9;
             this.PreviousFormButton.Text = "Назад";
             this.PreviousFormButton.UseVisualStyleBackColor = true;
             this.PreviousFormButton.Click += new System.EventHandler(this.MainFormButton_Click);
@@ -176,7 +177,7 @@ namespace Coursework_Practic {
             this.SearchTextBox.Location = new System.Drawing.Point(134, 96);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(200, 20);
-            this.SearchTextBox.TabIndex = 44;
+            this.SearchTextBox.TabIndex = 7;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // FilterTextBox
@@ -185,7 +186,7 @@ namespace Coursework_Practic {
             this.FilterTextBox.Location = new System.Drawing.Point(134, 124);
             this.FilterTextBox.Name = "FilterTextBox";
             this.FilterTextBox.Size = new System.Drawing.Size(200, 20);
-            this.FilterTextBox.TabIndex = 44;
+            this.FilterTextBox.TabIndex = 8;
             this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
             // label3

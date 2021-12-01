@@ -132,6 +132,13 @@ namespace Coursework_Practic {
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
+
+            dataGridView1.Columns[0].HeaderText = "ID записи";
+            dataGridView1.Columns[1].HeaderText = "ID группы";
+            dataGridView1.Columns[2].HeaderText = "ID преподавателя";
+            dataGridView1.Columns[3].HeaderText = "ID дисциплины";
+            dataGridView1.Columns[4].HeaderText = "Кол-во часов";
+            dataGridView1.Columns[5].HeaderText = "Время пары";
         }
 
         private void SelectFromTablesButton_Click(object sender, EventArgs e) {

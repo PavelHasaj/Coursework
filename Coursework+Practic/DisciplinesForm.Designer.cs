@@ -69,7 +69,7 @@ namespace Coursework_Practic
             this.DatabaseUpdateButton.Location = new System.Drawing.Point(281, 60);
             this.DatabaseUpdateButton.Name = "DatabaseUpdateButton";
             this.DatabaseUpdateButton.Size = new System.Drawing.Size(77, 23);
-            this.DatabaseUpdateButton.TabIndex = 18;
+            this.DatabaseUpdateButton.TabIndex = 6;
             this.DatabaseUpdateButton.Text = "Обновить";
             this.DatabaseUpdateButton.UseVisualStyleBackColor = true;
             this.DatabaseUpdateButton.Click += new System.EventHandler(this.DatabaseUpdateButton_Click);
@@ -80,7 +80,7 @@ namespace Coursework_Practic
             this.PreviousFormButton.Location = new System.Drawing.Point(115, 389);
             this.PreviousFormButton.Name = "PreviousFormButton";
             this.PreviousFormButton.Size = new System.Drawing.Size(77, 23);
-            this.PreviousFormButton.TabIndex = 19;
+            this.PreviousFormButton.TabIndex = 9;
             this.PreviousFormButton.Text = "Назад";
             this.PreviousFormButton.UseVisualStyleBackColor = true;
             this.PreviousFormButton.Click += new System.EventHandler(this.PreviousFormButton_Click);
@@ -91,7 +91,7 @@ namespace Coursework_Practic
             this.MainFormButton.Location = new System.Drawing.Point(198, 389);
             this.MainFormButton.Name = "MainFormButton";
             this.MainFormButton.Size = new System.Drawing.Size(77, 23);
-            this.MainFormButton.TabIndex = 20;
+            this.MainFormButton.TabIndex = 10;
             this.MainFormButton.Text = "Главная";
             this.MainFormButton.UseVisualStyleBackColor = true;
             this.MainFormButton.Click += new System.EventHandler(this.MainFormButton_Click);
@@ -102,7 +102,7 @@ namespace Coursework_Practic
             this.NextFormButton.Location = new System.Drawing.Point(281, 389);
             this.NextFormButton.Name = "NextFormButton";
             this.NextFormButton.Size = new System.Drawing.Size(77, 23);
-            this.NextFormButton.TabIndex = 21;
+            this.NextFormButton.TabIndex = 11;
             this.NextFormButton.Text = "Вперед";
             this.NextFormButton.UseVisualStyleBackColor = true;
             this.NextFormButton.Click += new System.EventHandler(this.NextFormButton_Click);
@@ -113,7 +113,7 @@ namespace Coursework_Practic
             this.DataDeleteButton.Location = new System.Drawing.Point(15, 60);
             this.DataDeleteButton.Name = "DataDeleteButton";
             this.DataDeleteButton.Size = new System.Drawing.Size(80, 23);
-            this.DataDeleteButton.TabIndex = 15;
+            this.DataDeleteButton.TabIndex = 3;
             this.DataDeleteButton.Text = "Удалить";
             this.DataDeleteButton.UseVisualStyleBackColor = true;
             this.DataDeleteButton.Click += new System.EventHandler(this.DataDeleteButton_Click);
@@ -124,7 +124,7 @@ namespace Coursework_Practic
             this.DataChangeButton.Location = new System.Drawing.Point(104, 60);
             this.DataChangeButton.Name = "DataChangeButton";
             this.DataChangeButton.Size = new System.Drawing.Size(80, 23);
-            this.DataChangeButton.TabIndex = 16;
+            this.DataChangeButton.TabIndex = 4;
             this.DataChangeButton.Text = "Изменить";
             this.DataChangeButton.UseVisualStyleBackColor = true;
             this.DataChangeButton.Click += new System.EventHandler(this.DataChangeButton_Click);
@@ -135,7 +135,7 @@ namespace Coursework_Practic
             this.DataAddButton.Location = new System.Drawing.Point(192, 60);
             this.DataAddButton.Name = "DataAddButton";
             this.DataAddButton.Size = new System.Drawing.Size(80, 23);
-            this.DataAddButton.TabIndex = 17;
+            this.DataAddButton.TabIndex = 5;
             this.DataAddButton.Text = "Добавить";
             this.DataAddButton.UseVisualStyleBackColor = true;
             this.DataAddButton.Click += new System.EventHandler(this.DataAddButton_Click);
@@ -164,7 +164,7 @@ namespace Coursework_Practic
             this.DisciplineNameTextBox.Location = new System.Drawing.Point(140, 34);
             this.DisciplineNameTextBox.Name = "DisciplineNameTextBox";
             this.DisciplineNameTextBox.Size = new System.Drawing.Size(218, 20);
-            this.DisciplineNameTextBox.TabIndex = 14;
+            this.DisciplineNameTextBox.TabIndex = 2;
             // 
             // DisciplineIDTextBox
             // 
@@ -172,7 +172,7 @@ namespace Coursework_Practic
             this.DisciplineIDTextBox.Location = new System.Drawing.Point(140, 8);
             this.DisciplineIDTextBox.Name = "DisciplineIDTextBox";
             this.DisciplineIDTextBox.Size = new System.Drawing.Size(218, 20);
-            this.DisciplineIDTextBox.TabIndex = 11;
+            this.DisciplineIDTextBox.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -182,6 +182,7 @@ namespace Coursework_Practic
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(424, 401);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.TabStop = false;
             // 
             // FilterTextBox
             // 
@@ -189,7 +190,7 @@ namespace Coursework_Practic
             this.FilterTextBox.Location = new System.Drawing.Point(167, 115);
             this.FilterTextBox.Name = "FilterTextBox";
             this.FilterTextBox.Size = new System.Drawing.Size(191, 20);
-            this.FilterTextBox.TabIndex = 47;
+            this.FilterTextBox.TabIndex = 8;
             this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
             // 
             // SearchTextBox
@@ -198,7 +199,7 @@ namespace Coursework_Practic
             this.SearchTextBox.Location = new System.Drawing.Point(167, 89);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(191, 20);
-            this.SearchTextBox.TabIndex = 48;
+            this.SearchTextBox.TabIndex = 7;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // label4

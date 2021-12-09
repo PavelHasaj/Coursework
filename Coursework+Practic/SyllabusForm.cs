@@ -26,7 +26,8 @@ namespace Coursework_Practic {
             dataGridView1.Columns[2].HeaderText = "ID преподавателя";
             dataGridView1.Columns[3].HeaderText = "ID дисциплины";
             dataGridView1.Columns[4].HeaderText = "Кол-во часов";
-            dataGridView1.Columns[5].HeaderText = "Время пары";
+            dataGridView1.Columns[5].HeaderText = "Кол-во пар";
+            Program.DeleteEmptyColumns(dataGridView1);
         }
 
         private void SyllabusForm_Load(object sender, EventArgs e) {
@@ -39,13 +40,13 @@ namespace Coursework_Practic {
             dataSet.Clear();
             connection.Open();
 
-            SqlCommand comand = new SqlCommand("INSERT INTO Syllabus VALUES (@ID_zap, @GroupID, @TeacherID, @DisciplineID, @Number_of_hours, @Class_time)", connection);
+            SqlCommand comand = new SqlCommand("INSERT INTO Syllabus VALUES (@ID_zap, @GroupID, @TeacherID, @DisciplineID, @Number_of_hours, @Number_of_pairs)", connection);
             comand.Parameters.AddWithValue("@ID_zap", IDZapTextBox.Text);
             comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
             comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
             comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
             comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
-            comand.Parameters.AddWithValue("@Class_time", ClassTimeTextBox.Text);
+            comand.Parameters.AddWithValue("@Number_of_pairs", ClassTimeTextBox.Text);
 
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
@@ -56,12 +57,12 @@ namespace Coursework_Practic {
         }
 
         private void DataChangeButton_Click(object sender, EventArgs e) {
-            SqlCommand comand = new SqlCommand("UPDATE Syllabus SET GroupID=@GroupID, TeacherID=@TeacherID, DisciplineID=@DisciplineID, Number_of_hours=@Number_of_hours, Class_time=@Class_time WHERE ID_zap = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
+            SqlCommand comand = new SqlCommand("UPDATE Syllabus SET GroupID=@GroupID, TeacherID=@TeacherID, DisciplineID=@DisciplineID, Number_of_hours=@Number_of_hours, Number_of_pairs=@Number_of_pairs WHERE ID_zap = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
             comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
             comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
             comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
             comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
-            comand.Parameters.AddWithValue("@Class_time", ClassTimeTextBox.Text);
+            comand.Parameters.AddWithValue("@Number_of_pairs", ClassTimeTextBox.Text);
 
             dataGridView1.DataSource = null;
             dataSet.Clear();
@@ -147,7 +148,7 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT Syllabus.Id_zap, Syllabus.Number_of_hours, Syllabus.Class_time, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
+            SqlCommand comand = new SqlCommand("SELECT Syllabus.Id_zap, Syllabus.Number_of_hours, Syllabus.Number_of_pairs, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -156,7 +157,7 @@ namespace Coursework_Practic {
             Program.DeleteEmptyColumns(dataGridView1);
             dataGridView1.Columns[0].HeaderText = "ID записи";
             dataGridView1.Columns[1].HeaderText = "Кол-во часов";
-            dataGridView1.Columns[2].HeaderText = "Время занятий";
+            dataGridView1.Columns[2].HeaderText = "Кол-во пар";
             dataGridView1.Columns[3].HeaderText = "Группа";
             dataGridView1.Columns[4].HeaderText = "Преподаватель";
             dataGridView1.Columns[5].HeaderText = "Дисциплина";
@@ -166,39 +167,59 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT Syllabus.Id_zap, Syllabus.Number_of_hours, Syllabus.Class_time, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
+            SqlCommand comand = new SqlCommand("SELECT Syllabus.Number_of_hours, Syllabus.Number_of_pairs, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
             connection.Close();
 
             Program.DeleteEmptyColumns(dataGridView1);
-            dataGridView1.Columns[0].HeaderText = "ID записи";
-            dataGridView1.Columns[1].HeaderText = "Кол-во часов";
-            dataGridView1.Columns[2].HeaderText = "Время занятий";
-            dataGridView1.Columns[3].HeaderText = "Группа";
-            dataGridView1.Columns[4].HeaderText = "Преподаватель";
-            dataGridView1.Columns[5].HeaderText = "Дисциплина";
+            dataGridView1.Columns[0].HeaderText = "Кол-во часов";
+            dataGridView1.Columns[1].HeaderText = "Кол-во пар";
+            dataGridView1.Columns[2].HeaderText = "Группа";
+            dataGridView1.Columns[3].HeaderText = "Преподаватель";
+            dataGridView1.Columns[4].HeaderText = "Дисциплина";
 
             Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
             //Создаем рабочую книгу:
             ExcelApp.Application.Workbooks.Add(Type.Missing);
-            //Нам доступно редактирование некоторых параметров, в качестве примера изменим ширину столбцов:
-            ExcelApp.Columns.ColumnWidth = 15;
-            //Задать значение ячейки можно так:
-            ExcelApp.Cells[1, 1] = "ID записи";
-            ExcelApp.Cells[1, 2] = "Кол-во часов";
-            ExcelApp.Cells[1, 3] = "Время занятий";
-            ExcelApp.Cells[1, 4] = "Группа";
-            ExcelApp.Cells[1, 5] = "Преподаватель";
-            ExcelApp.Cells[1, 6] = "Дисциплина";
-            for (int i = 0; i < dataGridView1.ColumnCount; i++) {
-                for (int j = 0; j < dataGridView1.RowCount - 1; j++) {
-                    ExcelApp.Cells[j + 2, i + 1] = (dataGridView1[i, j].Value).ToString();
+
+            //Вывод дня недели и номера пары
+            int indent = 2;
+            ExcelApp.Cells[1, 1] = "Расписание занятий. Подготовил: ...";
+            ExcelApp.Cells[3, 1] = "Понедельник";
+            ExcelApp.Cells[7, 1] = "Вторник";
+            ExcelApp.Cells[11, 1] = "Среда";
+            ExcelApp.Cells[15, 1] = "Четверг";
+            ExcelApp.Cells[19, 1] = "Пятница";
+            ExcelApp.Cells[23, 1] = "Суббота";
+            for (int days = 0; days < 6; days++) {
+                for (int pairs = 1; pairs < 5; pairs++) {
+                    ExcelApp.Cells[indent + (days * 4) + pairs, 2] = pairs;
                 }
             }
-            //j + 2, потому что первая строка отведена для подписей столбцов!
-            //И для отображения полученного результата, необходимо показать документ:
+
+            ExcelApp.Cells[2, 1] = "День недели";
+            ExcelApp.Cells[2, 2] = "Номер пары";
+            ExcelApp.Cells[2, 3] = "Группа";
+            ExcelApp.Cells[2, 4] = "Преподаватель";
+            ExcelApp.Cells[2, 5] = "Дисциплина";
+            indent++;
+            int indentFromTop = 0;
+            int DisciplinesCount = dataGridView1.RowCount - 1;
+            for (int dicipline = 0; dicipline < DisciplinesCount; dicipline++) { //для всех дисциплин
+                int MaxPairs = Convert.ToInt32(dataGridView1.Rows[dicipline].Cells[1].Value);
+                for (int pair = indent + dicipline; pair < MaxPairs + indent + dicipline; pair++) { //для пар по дисциплине
+                    for (int cells = 2; cells < dataGridView1.ColumnCount; cells++) { //записать строку
+                        ExcelApp.Cells[pair + indentFromTop, cells + 1] = dataGridView1[cells, dicipline].Value.ToString();
+                    }
+                    if ((pair + indentFromTop - 1) % 4 == 0)
+                        indentFromTop++;
+                }
+                indentFromTop += MaxPairs - 1;
+            }
+
+            ExcelApp.Columns.AutoFit(); //
             ExcelApp.Visible = true;
         }
 

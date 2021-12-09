@@ -147,7 +147,7 @@ namespace Coursework_Practic {
             this.MainFormButton.TabIndex = 10;
             this.MainFormButton.Text = "Главная";
             this.MainFormButton.UseVisualStyleBackColor = true;
-            this.MainFormButton.Click += new System.EventHandler(this.PreviousFormButton_Click);
+            this.MainFormButton.Click += new System.EventHandler(this.MainFormButton_Click);
             // 
             // PreviousFormButton
             // 

@@ -42,16 +42,19 @@ namespace Coursework_Practic {
             this.label4 = new System.Windows.Forms.Label();
             this.NumberOfHoursTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ClassTimeTextBox = new System.Windows.Forms.TextBox();
+            this.NumberOfPairsTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.SelectFromTablesButton = new System.Windows.Forms.Button();
             this.ToExcelButton = new System.Windows.Forms.Button();
             this.SumOfHoursByGroups = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FilterCueTextBox = new Coursework_Practic.CueTextBox();
+            this.DisciplineFilterRadioButton = new System.Windows.Forms.RadioButton();
+            this.FilterButton = new System.Windows.Forms.Button();
+            this.TeacherFilterRadioButton = new System.Windows.Forms.RadioButton();
+            this.GroupFilterRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatabaseUpdateButton
@@ -68,9 +71,9 @@ namespace Coursework_Practic {
             // PreviousFormButton
             // 
             this.PreviousFormButton.BackColor = System.Drawing.SystemColors.Control;
-            this.PreviousFormButton.Location = new System.Drawing.Point(98, 340);
+            this.PreviousFormButton.Location = new System.Drawing.Point(12, 349);
             this.PreviousFormButton.Name = "PreviousFormButton";
-            this.PreviousFormButton.Size = new System.Drawing.Size(77, 23);
+            this.PreviousFormButton.Size = new System.Drawing.Size(107, 23);
             this.PreviousFormButton.TabIndex = 16;
             this.PreviousFormButton.Text = "Назад";
             this.PreviousFormButton.UseVisualStyleBackColor = true;
@@ -79,9 +82,9 @@ namespace Coursework_Practic {
             // MainFormButton
             // 
             this.MainFormButton.BackColor = System.Drawing.SystemColors.Control;
-            this.MainFormButton.Location = new System.Drawing.Point(181, 340);
+            this.MainFormButton.Location = new System.Drawing.Point(125, 349);
             this.MainFormButton.Name = "MainFormButton";
-            this.MainFormButton.Size = new System.Drawing.Size(77, 23);
+            this.MainFormButton.Size = new System.Drawing.Size(103, 23);
             this.MainFormButton.TabIndex = 17;
             this.MainFormButton.Text = "Главная";
             this.MainFormButton.UseVisualStyleBackColor = true;
@@ -90,9 +93,9 @@ namespace Coursework_Practic {
             // NextFormButton
             // 
             this.NextFormButton.BackColor = System.Drawing.SystemColors.Control;
-            this.NextFormButton.Location = new System.Drawing.Point(264, 340);
+            this.NextFormButton.Location = new System.Drawing.Point(234, 349);
             this.NextFormButton.Name = "NextFormButton";
-            this.NextFormButton.Size = new System.Drawing.Size(77, 23);
+            this.NextFormButton.Size = new System.Drawing.Size(107, 23);
             this.NextFormButton.TabIndex = 18;
             this.NextFormButton.Text = "Вперед";
             this.NextFormButton.UseVisualStyleBackColor = true;
@@ -101,7 +104,7 @@ namespace Coursework_Practic {
             // DataDeleteButton
             // 
             this.DataDeleteButton.BackColor = System.Drawing.SystemColors.Control;
-            this.DataDeleteButton.Location = new System.Drawing.Point(15, 169);
+            this.DataDeleteButton.Location = new System.Drawing.Point(12, 169);
             this.DataDeleteButton.Name = "DataDeleteButton";
             this.DataDeleteButton.Size = new System.Drawing.Size(76, 23);
             this.DataDeleteButton.TabIndex = 7;
@@ -134,7 +137,7 @@ namespace Coursework_Practic {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(9, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 36;
@@ -143,7 +146,7 @@ namespace Coursework_Practic {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(9, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 37;
@@ -171,7 +174,7 @@ namespace Coursework_Practic {
             this.dataGridView1.Location = new System.Drawing.Point(347, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(618, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(618, 360);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.TabStop = false;
             // 
@@ -186,7 +189,7 @@ namespace Coursework_Practic {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 68);
+            this.label3.Location = new System.Drawing.Point(9, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 36;
@@ -203,7 +206,7 @@ namespace Coursework_Practic {
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 94);
+            this.label4.Location = new System.Drawing.Point(9, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 36;
@@ -220,70 +223,34 @@ namespace Coursework_Practic {
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 120);
+            this.label5.Location = new System.Drawing.Point(9, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 36;
             this.label5.Text = "Кол-во часов";
             // 
-            // ClassTimeTextBox
+            // NumberOfPairsTextBox
             // 
-            this.ClassTimeTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.ClassTimeTextBox.Location = new System.Drawing.Point(122, 143);
-            this.ClassTimeTextBox.Name = "ClassTimeTextBox";
-            this.ClassTimeTextBox.Size = new System.Drawing.Size(219, 20);
-            this.ClassTimeTextBox.TabIndex = 6;
+            this.NumberOfPairsTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.NumberOfPairsTextBox.Location = new System.Drawing.Point(122, 143);
+            this.NumberOfPairsTextBox.Name = "NumberOfPairsTextBox";
+            this.NumberOfPairsTextBox.Size = new System.Drawing.Size(219, 20);
+            this.NumberOfPairsTextBox.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 146);
+            this.label6.Location = new System.Drawing.Point(9, 146);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Время пары";
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SearchTextBox.Location = new System.Drawing.Point(171, 201);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(170, 20);
-            this.SearchTextBox.TabIndex = 11;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 232);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Фильтрация по кол-ву часов";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 204);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 13);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Поиск";
-            // 
-            // FilterTextBox
-            // 
-            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.FilterTextBox.Location = new System.Drawing.Point(171, 229);
-            this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(170, 20);
-            this.FilterTextBox.TabIndex = 12;
-            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
+            this.label6.Text = "Кол-во пар";
             // 
             // SelectFromTablesButton
             // 
-            this.SelectFromTablesButton.Location = new System.Drawing.Point(234, 255);
+            this.SelectFromTablesButton.Location = new System.Drawing.Point(180, 291);
             this.SelectFromTablesButton.Name = "SelectFromTablesButton";
-            this.SelectFromTablesButton.Size = new System.Drawing.Size(107, 23);
+            this.SelectFromTablesButton.Size = new System.Drawing.Size(161, 23);
             this.SelectFromTablesButton.TabIndex = 14;
             this.SelectFromTablesButton.Text = "Выборка";
             this.SelectFromTablesButton.UseVisualStyleBackColor = true;
@@ -291,9 +258,9 @@ namespace Coursework_Practic {
             // 
             // ToExcelButton
             // 
-            this.ToExcelButton.Location = new System.Drawing.Point(122, 255);
+            this.ToExcelButton.Location = new System.Drawing.Point(12, 291);
             this.ToExcelButton.Name = "ToExcelButton";
-            this.ToExcelButton.Size = new System.Drawing.Size(107, 23);
+            this.ToExcelButton.Size = new System.Drawing.Size(162, 23);
             this.ToExcelButton.TabIndex = 13;
             this.ToExcelButton.Text = "Вывод в Excel";
             this.ToExcelButton.UseVisualStyleBackColor = true;
@@ -301,25 +268,89 @@ namespace Coursework_Practic {
             // 
             // SumOfHoursByGroups
             // 
-            this.SumOfHoursByGroups.Location = new System.Drawing.Point(122, 284);
+            this.SumOfHoursByGroups.Location = new System.Drawing.Point(12, 320);
             this.SumOfHoursByGroups.Name = "SumOfHoursByGroups";
-            this.SumOfHoursByGroups.Size = new System.Drawing.Size(219, 23);
+            this.SumOfHoursByGroups.Size = new System.Drawing.Size(329, 23);
             this.SumOfHoursByGroups.TabIndex = 15;
             this.SumOfHoursByGroups.Text = "Найти общее кол-во часов группы";
             this.SumOfHoursByGroups.UseVisualStyleBackColor = true;
             this.SumOfHoursByGroups.Click += new System.EventHandler(this.SumOfHoursByGroups_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.FilterCueTextBox);
+            this.groupBox1.Controls.Add(this.DisciplineFilterRadioButton);
+            this.groupBox1.Controls.Add(this.FilterButton);
+            this.groupBox1.Controls.Add(this.TeacherFilterRadioButton);
+            this.groupBox1.Controls.Add(this.GroupFilterRadioButton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 198);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(329, 87);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтрация";
+            // 
+            // FilterCueTextBox
+            // 
+            this.FilterCueTextBox.Cue = "Параметр фильтра";
+            this.FilterCueTextBox.Location = new System.Drawing.Point(133, 19);
+            this.FilterCueTextBox.Name = "FilterCueTextBox";
+            this.FilterCueTextBox.Size = new System.Drawing.Size(190, 20);
+            this.FilterCueTextBox.TabIndex = 48;
+            // 
+            // DisciplineFilterRadioButton
+            // 
+            this.DisciplineFilterRadioButton.AutoSize = true;
+            this.DisciplineFilterRadioButton.Location = new System.Drawing.Point(6, 65);
+            this.DisciplineFilterRadioButton.Name = "DisciplineFilterRadioButton";
+            this.DisciplineFilterRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.DisciplineFilterRadioButton.TabIndex = 47;
+            this.DisciplineFilterRadioButton.TabStop = true;
+            this.DisciplineFilterRadioButton.Text = "По дисциплине";
+            this.DisciplineFilterRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // FilterButton
+            // 
+            this.FilterButton.Location = new System.Drawing.Point(133, 45);
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.Size = new System.Drawing.Size(190, 23);
+            this.FilterButton.TabIndex = 13;
+            this.FilterButton.Text = "Отфильтровать";
+            this.FilterButton.UseVisualStyleBackColor = true;
+            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
+            // TeacherFilterRadioButton
+            // 
+            this.TeacherFilterRadioButton.AutoSize = true;
+            this.TeacherFilterRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.TeacherFilterRadioButton.Name = "TeacherFilterRadioButton";
+            this.TeacherFilterRadioButton.Size = new System.Drawing.Size(121, 17);
+            this.TeacherFilterRadioButton.TabIndex = 47;
+            this.TeacherFilterRadioButton.TabStop = true;
+            this.TeacherFilterRadioButton.Text = "По преподавателю";
+            this.TeacherFilterRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // GroupFilterRadioButton
+            // 
+            this.GroupFilterRadioButton.AutoSize = true;
+            this.GroupFilterRadioButton.Checked = true;
+            this.GroupFilterRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.GroupFilterRadioButton.Name = "GroupFilterRadioButton";
+            this.GroupFilterRadioButton.Size = new System.Drawing.Size(76, 17);
+            this.GroupFilterRadioButton.TabIndex = 47;
+            this.GroupFilterRadioButton.TabStop = true;
+            this.GroupFilterRadioButton.Text = "По группе";
+            this.GroupFilterRadioButton.UseVisualStyleBackColor = true;
+            // 
             // SyllabusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 379);
+            this.ClientSize = new System.Drawing.Size(978, 383);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SumOfHoursByGroups);
             this.Controls.Add(this.ToExcelButton);
             this.Controls.Add(this.SelectFromTablesButton);
-            this.Controls.Add(this.FilterTextBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
             this.Controls.Add(this.MainFormButton);
@@ -333,8 +364,7 @@ namespace Coursework_Practic {
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.ClassTimeTextBox);
+            this.Controls.Add(this.NumberOfPairsTextBox);
             this.Controls.Add(this.NumberOfHoursTextBox);
             this.Controls.Add(this.DisciplineIDTextBox);
             this.Controls.Add(this.TeacherIDTextBox);
@@ -347,6 +377,8 @@ namespace Coursework_Practic {
             this.Text = "Учебный план";
             this.Load += new System.EventHandler(this.SyllabusForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,14 +404,16 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox NumberOfHoursTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox ClassTimeTextBox;
+        private System.Windows.Forms.TextBox NumberOfPairsTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.Button SelectFromTablesButton;
         private System.Windows.Forms.Button ToExcelButton;
         private System.Windows.Forms.Button SumOfHoursByGroups;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton DisciplineFilterRadioButton;
+        private System.Windows.Forms.RadioButton TeacherFilterRadioButton;
+        private System.Windows.Forms.RadioButton GroupFilterRadioButton;
+        private CueTextBox FilterCueTextBox;
+        private System.Windows.Forms.Button FilterButton;
     }
 }

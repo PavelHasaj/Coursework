@@ -38,9 +38,7 @@ namespace Coursework_Practic {
             this.PreviousFormButton = new System.Windows.Forms.Button();
             this.DatabaseUpdateButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
@@ -180,15 +178,6 @@ namespace Coursework_Practic {
             this.SearchTextBox.TabIndex = 7;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
-            // FilterTextBox
-            // 
-            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.FilterTextBox.Location = new System.Drawing.Point(134, 124);
-            this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(200, 20);
-            this.FilterTextBox.TabIndex = 8;
-            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -198,22 +187,12 @@ namespace Coursework_Practic {
             this.label3.TabIndex = 2;
             this.label3.Text = "Поиск";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Фильтрация по ФИО";
-            // 
             // TeachersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 418);
-            this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
@@ -223,7 +202,6 @@ namespace Coursework_Practic {
             this.Controls.Add(this.DataChangeButton);
             this.Controls.Add(this.DataAddButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TeacherFullNameTextBox);
@@ -259,9 +237,7 @@ namespace Coursework_Practic {
         private System.Windows.Forms.Button PreviousFormButton;
         private System.Windows.Forms.Button DatabaseUpdateButton;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }
 

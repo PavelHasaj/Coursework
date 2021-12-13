@@ -109,19 +109,5 @@ namespace Coursework_Practic {
                 }
             }
         }
-
-        private void FilterTextBox_TextChanged(object sender, EventArgs e) {
-            dataGridView1.DataSource = null;
-            dataSet.Clear();
-            connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT * FROM Groups WHERE Group_Name LIKE @Group_Name", connection);
-            comand.Parameters.AddWithValue("@Group_Name", "%" + FilterTextBox.Text + "%");
-            dataAdapter.SelectCommand = comand;
-            dataAdapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-            connection.Close();
-            dataGridView1.Columns[0].HeaderText = "ID записи";
-            dataGridView1.Columns[1].HeaderText = "Название группы";
-        }
     }
 }

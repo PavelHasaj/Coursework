@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace Coursework_Practic {
     public partial class SyllabusForm : Form {
@@ -39,41 +41,51 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
+            SqlCommand getCountOfHours = new SqlCommand("SELECT SUM(Number_of_hours) FROM Syllabus", connection);
+            int SumOfHours = (int)getCountOfHours.ExecuteScalar() + Convert.ToInt32(NumberOfHoursTextBox.Text);
+            if (SumOfHours <= 36) {
+                SqlCommand comand = new SqlCommand("INSERT INTO Syllabus VALUES (@ID_zap, @GroupID, @TeacherID, @DisciplineID, @Number_of_hours, @Number_of_pairs)", connection);
+                comand.Parameters.AddWithValue("@ID_zap", IDZapTextBox.Text);
+                comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
+                comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
+                comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
+                comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
+                comand.Parameters.AddWithValue("@Number_of_pairs", NumberOfPairsTextBox.Text);
 
-            SqlCommand comand = new SqlCommand("INSERT INTO Syllabus VALUES (@ID_zap, @GroupID, @TeacherID, @DisciplineID, @Number_of_hours, @Number_of_pairs)", connection);
-            comand.Parameters.AddWithValue("@ID_zap", IDZapTextBox.Text);
-            comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
-            comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
-            comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
-            comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
-            comand.Parameters.AddWithValue("@Number_of_pairs", ClassTimeTextBox.Text);
+                dataAdapter.SelectCommand = comand;
+                dataAdapter.Fill(dataSet);
+                dataGridView1.DataSource = dataSet.Tables[0];
+                connection.Close();
 
-            dataAdapter.SelectCommand = comand;
-            dataAdapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-            connection.Close();
-
-            DatabaseUpdate();//вызов метода обновления dataGridView
+                DatabaseUpdate();//вызов метода обновления dataGridView
+            } else
+                MessageBox.Show($"Сумма часов за неделю: {SumOfHours} > 36 \nУменьшите число часов", "Превышение суммы часов за неделю!");
         }
 
         private void DataChangeButton_Click(object sender, EventArgs e) {
-            SqlCommand comand = new SqlCommand("UPDATE Syllabus SET GroupID=@GroupID, TeacherID=@TeacherID, DisciplineID=@DisciplineID, Number_of_hours=@Number_of_hours, Number_of_pairs=@Number_of_pairs WHERE ID_zap = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
-            comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
-            comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
-            comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
-            comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
-            comand.Parameters.AddWithValue("@Number_of_pairs", ClassTimeTextBox.Text);
-
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
 
-            dataAdapter.SelectCommand = comand;
-            dataAdapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-            connection.Close();
+            SqlCommand getCountOfHours = new SqlCommand("SELECT SUM(Number_of_hours) FROM Syllabus", connection);
+            int SumOfHours = (int)getCountOfHours.ExecuteScalar() + Convert.ToInt32(NumberOfHoursTextBox.Text);
+            if (SumOfHours <= 36) {
+                SqlCommand comand = new SqlCommand("UPDATE Syllabus SET GroupID=@GroupID, TeacherID=@TeacherID, DisciplineID=@DisciplineID, Number_of_hours=@Number_of_hours, Number_of_pairs=@Number_of_pairs WHERE ID_zap = " + dataGridView1[0, dataGridView1.CurrentRow.Index].Value, connection);
+                comand.Parameters.AddWithValue("@GroupID", GroupIDTextBox.Text);
+                comand.Parameters.AddWithValue("@TeacherID", TeacherIDTextBox.Text);
+                comand.Parameters.AddWithValue("@DisciplineID", DisciplineIDTextBox.Text);
+                comand.Parameters.AddWithValue("@Number_of_hours", NumberOfHoursTextBox.Text);
+                comand.Parameters.AddWithValue("@Number_of_pairs", NumberOfPairsTextBox.Text);
 
-            DatabaseUpdate();
+                dataAdapter.SelectCommand = comand;
+                dataAdapter.Fill(dataSet);
+                dataGridView1.DataSource = dataSet.Tables[0];
+                connection.Close();
+
+                DatabaseUpdate();
+            } else
+                MessageBox.Show($"Сумма часов за неделю: {SumOfHours} > 36 \nУменьшите число часов", "Превышение суммы часов за неделю!");
+
         }
 
         private void DataDeleteButton_Click(object sender, EventArgs e) {
@@ -111,26 +123,19 @@ namespace Coursework_Practic {
             this.Close();
         }
 
-        private void SearchTextBox_TextChanged(object sender, EventArgs e) {
-            for (int i = 0; i < dataGridView1.RowCount; i++) {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++) {
-                    if (dataGridView1.Rows[i].Cells[j].Value != null) {
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(SearchTextBox.Text)) {
-                            dataGridView1.Rows[i].Selected = true;
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-
-        private void FilterTextBox_TextChanged(object sender, EventArgs e) {
+        private void FilterButton_Click(object sender, EventArgs e) {
+            string FilterParameter = "";
+            if (GroupFilterRadioButton.Checked)
+                FilterParameter = "GroupID";
+            else if (TeacherFilterRadioButton.Checked)
+                FilterParameter = "TeacherID";
+            else
+                FilterParameter = "DisciplineID";
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT * FROM Syllabus WHERE Number_of_hours LIKE @Number_of_hours", connection);
-            comand.Parameters.AddWithValue("@Number_of_hours", "%" + FilterTextBox.Text + "%");
+            SqlCommand comand = new SqlCommand("SELECT * FROM Syllabus WHERE " + FilterParameter + " LIKE @" + FilterParameter, connection);
+            comand.Parameters.AddWithValue("@" + FilterParameter, "%" + FilterCueTextBox.Text + "%");
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -167,7 +172,7 @@ namespace Coursework_Practic {
             dataGridView1.DataSource = null;
             dataSet.Clear();
             connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT Syllabus.Number_of_hours, Syllabus.Number_of_pairs, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection);
+            SqlCommand comand = new SqlCommand("SELECT Syllabus.Number_of_hours, Syllabus.Number_of_pairs, Groups.Group_Name, Teachers.Teacher_FullName, Disciplines.Discipline_Name FROM Syllabus INNER JOIN Groups ON Syllabus.GroupID=Groups.Group_ID LEFT JOIN Teachers ON Syllabus.TeacherID=Teachers.Teacher_ID LEFT JOIN Disciplines ON Syllabus.DisciplineID=Disciplines.Discipline_ID", connection); 
             dataAdapter.SelectCommand = comand;
             dataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -184,6 +189,8 @@ namespace Coursework_Practic {
             //Создаем рабочую книгу:
             ExcelApp.Application.Workbooks.Add(Type.Missing);
 
+            ExcelApp.Range[ExcelApp.Cells[1, 1], ExcelApp.Cells[1, 5]].Merge();
+            ExcelApp.Cells[1, 1].Font.Bold = true;
             //Вывод дня недели и номера пары
             int indent = 2;
             ExcelApp.Cells[1, 1] = "Расписание занятий. Подготовил: ...";
@@ -204,6 +211,7 @@ namespace Coursework_Practic {
             ExcelApp.Cells[2, 3] = "Группа";
             ExcelApp.Cells[2, 4] = "Преподаватель";
             ExcelApp.Cells[2, 5] = "Дисциплина";
+
             indent++;
             int indentFromTop = 0;
             int DisciplinesCount = dataGridView1.RowCount - 1;
@@ -219,7 +227,7 @@ namespace Coursework_Practic {
                 indentFromTop += MaxPairs - 1;
             }
 
-            ExcelApp.Columns.AutoFit(); //
+            ExcelApp.Columns.AutoFit(); 
             ExcelApp.Visible = true;
         }
 
@@ -237,5 +245,28 @@ namespace Coursework_Practic {
             dataGridView1.Columns[0].HeaderText = "Название группы";
             dataGridView1.Columns[1].HeaderText = "Кол-во часов";
         }
+    }
+
+    class CueTextBox : TextBox {
+        [Localizable(true)]
+        public string Cue {
+            get { return mCue; }
+            set { mCue = value; updateCue(); }
+        }
+
+        private void updateCue() {
+            if (this.IsHandleCreated && mCue != null) {
+                SendMessage(this.Handle, 0x1501, (IntPtr)1, mCue);
+            }
+        }
+        protected override void OnHandleCreated(EventArgs e) {
+            base.OnHandleCreated(e);
+            updateCue();
+        }
+        private string mCue;
+
+        // PInvoke
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, string lp);
     }
 }

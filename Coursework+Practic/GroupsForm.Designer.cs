@@ -40,9 +40,7 @@
             this.DisciplineNameTextBox = new System.Windows.Forms.TextBox();
             this.DisciplineIDTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -168,15 +166,6 @@
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.TabStop = false;
             // 
-            // FilterTextBox
-            // 
-            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.FilterTextBox.Location = new System.Drawing.Point(141, 119);
-            this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(190, 20);
-            this.FilterTextBox.TabIndex = 8;
-            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -185,15 +174,6 @@
             this.SearchTextBox.Size = new System.Drawing.Size(189, 20);
             this.SearchTextBox.TabIndex = 7;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 13);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Фильтрация по группе";
             // 
             // label3
             // 
@@ -210,9 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(769, 424);
-            this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
@@ -252,9 +230,7 @@
         private System.Windows.Forms.TextBox DisciplineNameTextBox;
         private System.Windows.Forms.TextBox DisciplineIDTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
     }
 }

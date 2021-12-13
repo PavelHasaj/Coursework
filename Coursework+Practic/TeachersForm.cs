@@ -107,17 +107,5 @@ namespace Coursework_Practic {
                 }
             }
         }
-
-        private void FilterTextBox_TextChanged(object sender, EventArgs e) {
-            dataGridView1.DataSource = null;
-            dataSet.Clear();
-            connection.Open();
-            SqlCommand comand = new SqlCommand("SELECT * FROM Teachers WHERE Teacher_FullName LIKE @Teacher_FullName", connection);
-            comand.Parameters.AddWithValue("@Teacher_FullName", "%" + FilterTextBox.Text + "%");
-            dataAdapter.SelectCommand = comand;
-            dataAdapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-            connection.Close();
-        }
     }
 }

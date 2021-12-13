@@ -44,9 +44,7 @@ namespace Coursework_Practic
             this.DisciplineNameTextBox = new System.Windows.Forms.TextBox();
             this.DisciplineIDTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDatabaseDataSetBindingSource)).BeginInit();
@@ -184,15 +182,6 @@ namespace Coursework_Practic
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.TabStop = false;
             // 
-            // FilterTextBox
-            // 
-            this.FilterTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.FilterTextBox.Location = new System.Drawing.Point(167, 115);
-            this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(191, 20);
-            this.FilterTextBox.TabIndex = 8;
-            this.FilterTextBox.TextChanged += new System.EventHandler(this.FilterTextBox_TextChanged);
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -201,15 +190,6 @@ namespace Coursework_Practic
             this.SearchTextBox.Size = new System.Drawing.Size(191, 20);
             this.SearchTextBox.TabIndex = 7;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 13);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "Фильтрация по дисциплине";
             // 
             // label3
             // 
@@ -226,9 +206,7 @@ namespace Coursework_Practic
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 424);
-            this.Controls.Add(this.FilterTextBox);
             this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DatabaseUpdateButton);
             this.Controls.Add(this.PreviousFormButton);
@@ -271,9 +249,7 @@ namespace Coursework_Practic
         private System.Windows.Forms.TextBox DisciplineNameTextBox;
         private System.Windows.Forms.TextBox DisciplineIDTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
     }
 }
